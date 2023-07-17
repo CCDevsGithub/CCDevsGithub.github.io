@@ -21,7 +21,7 @@ body{
     max-height: 2cm;
 }
 .notice{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     background-color: #edaa00;
     font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@ body{
     grid-template-rows: auto auto;
 }
 .socials{
-    max-width: min(17cm,70vh);
+    max-width: min(17cm,100vw);
     max-height: min(17cm,70vh);
     width: 100vw;
     height: 100vw;
