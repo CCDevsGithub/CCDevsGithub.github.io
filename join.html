@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="joinstyle.css">
+        <link rel="icon" href="Crsh_Icon_Inv.png" type="x-icon">
+        <script>
+            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN'];
+            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
+            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Singapore','Thailand','Vietnam']
+            let region_code = '';
+            let code_index = -1;
+            fetch('http://ip-api.com/json/?fields=61439')
+                .then(res => res.json())
+                .then(res => {
+                    region_code = res.countryCode;
+                    let len_ = regions_def.length;
+                    for (let y=0; y<len_;y++){
+                        if (regions_def[y] == region_code){
+                            code_index = y;
+                        }
+                    }
+                    if(code_index != -1){
+                        let rt = document.getElementById("regiontext");
+                        let inrtext = ""
+                        let minvalreg = code_index-3
+                        let maxvalreg = code_index+3
+                        if (minvalreg < 0){
+                            minvalreg = minvalreg + len_
+                            for (let z=minvalreg;z<len_;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    inrtext = inrtext + "<br />" + region_text[z];
+                                }
+                            }
+                            for (let k=0;k<code_index+4;k++){
+                                if(k==code_index){
+                                    if(diff_lang[k] == 0){
+                                        inrtext = inrtext + "<br /><span>" + region_text[k] + "</span>";
+                                    } else {
+                                        inrtext = inrtext + "<br /><span>" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
+                                    }
+                                } else {
+                                    inrtext = inrtext + "<br />" + region_text[k];
+                                }
+                            }
+                        } else if (maxvalreg > len_){
+                            maxvalreg = maxvalreg - len_
+                            for (let z=code_index-3;z<len_;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    if(z==code_index){
+                                        if(diff_lang[z] == 0){
+                                            inrtext = inrtext + "<br /><span>" + region_text[z] + "</span>";
+                                        } else {
+                                            inrtext = inrtext + "<br /><span>" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                        }
+                                    } else {
+                                        inrtext = inrtext + "<br />" + region_text[z];
+                                    }
+                                }
+                            }
+                            for (let k=0;k<maxvalreg+1;k++){
+                                inrtext = inrtext + "<br />" + region_text[k];
+                            }
+                        } else {
+                            for (let z=code_index-3;z<code_index+4;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    if(z==code_index){
+                                        if(diff_lang[z] == 0){
+                                            inrtext = inrtext + "<br /><span>" + region_text[z] + "</span>";
+                                        } else {
+                                            inrtext = inrtext + "<br /><span>" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                        }
+                                    } else {
+                                        inrtext = inrtext + "<br />" + region_text[z];
+                                    }
+                                }
+                            }
+                        }
+                        rt.innerHTML = "<h1>" + inrtext + "</h1>"
+                    }
+                })
+        </script>
+        <script>
+            const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
+            const region_header = ['注意:このサイトは現在メンテナンス中です',
+            '알림: 이 사이트는 현재 유지 관리 중입니다',
+            'Perhatikan: Situs ini sedang dalam pemeliharaan']
+            const region_footer = ['サイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、ソーシャルメディアプラットフォームを自由に探索してください. あなたの忍耐は高く評価されます。',
+            '이 사이트는 당분간 의도한 대로 작동하지 않을 수 있습니다. 당분간은 소셜 미디어 플랫폼을 자유롭게 탐색하십시오.양해해 주셔서 감사해요.',
+            'Situs ini mungkin tidak berfungsi sebagaimana dimaksud untuk saat ini, jangan ragu untuk menjelajahi sosial kami untuk saat ini. Kesabaran Anda dihargai.']
+            let user_region = '';
+            let region_index = -1;
+            fetch('http://ip-api.com/json/?fields=61439')
+                .then(res => res.json())
+                .then(res => {
+                    user_region = res.countryCode;
+                    let len = region_codes.length;
+                    for (let x=0; x<len;x++){
+                        if (region_codes[x] == user_region){
+                            region_index = x;
+                        }
+                    }
+                    if(region_index != -1){
+                        let ht = document.getElementById("n1");
+                        let ft = document.getElementById("n2");
+                        if (region_index < 3){
+                            ht.textContent = region_header[region_index]
+                            ft.textContent = region_footer[region_index]
+                        }
+                    }
+                })
+            
+        </script>
+    </head>
+    <title>Join Our Discord and Play Now!!!</title>
+    <body>
+        <div class="menu">
+            <div class="menulogo">
+                <embed src ="Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+            </div>
+        </div>
+        <div class="selectjoinregion" style="margin-top: 1vh;">
+            <h1 id="regiontext">日本<br>한국<br>pilipinas<br><span>Region Select</span><br>ประเทศไทย<br>Việt Nam<br>Indonesia</h1>
+            <div class="buttom"></div>
+        </div>
+        <div class="notice">
+            <div class="continuebutton">
+                <button class="btndiscord" onclick="window.location.href='https://discord.gg/9ASGD4dEpu';"></button>
+                <span><h1>Continue ------------ >></h1></span>
+            </div>
+            <h1 id="n1">Notice: This site is currently under maintenance</h1>
+            <p id="n2">The site may not work as intended for this while, feel free to explore our socials for the time being. Your patience is appreciated.</p>
+        </div>
+    </body>
+</html>
