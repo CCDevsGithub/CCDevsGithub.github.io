@@ -6,7 +6,7 @@
         <link rel="icon" href="Crsh_Icon_Inv.png" type="x-icon">
         <script>
             const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN'];
-            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
+            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
             const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0]
             const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Singapore','Thailand','Vietnam']
             let region_code = '';
@@ -38,9 +38,9 @@
                             for (let k=0;k<code_index+4;k++){
                                 if(k==code_index){
                                     if(diff_lang[k] == 0){
-                                        inrtext = inrtext + "<br /><span>" + region_text[k] + "</span>";
+                                        inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + "</span>";
                                     } else {
-                                        inrtext = inrtext + "<br /><span>" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
+                                        inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
                                     }
                                 } else {
                                     inrtext = inrtext + "<br />" + region_text[k];
@@ -54,9 +54,9 @@
                                 } else {
                                     if(z==code_index){
                                         if(diff_lang[z] == 0){
-                                            inrtext = inrtext + "<br /><span>" + region_text[z] + "</span>";
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
                                         } else {
-                                            inrtext = inrtext + "<br /><span>" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                            inrtext = inrtext +"<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
                                         }
                                     } else {
                                         inrtext = inrtext + "<br />" + region_text[z];
@@ -73,9 +73,9 @@
                                 } else {
                                     if(z==code_index){
                                         if(diff_lang[z] == 0){
-                                            inrtext = inrtext + "<br /><span>" + region_text[z] + "</span>";
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
                                         } else {
-                                            inrtext = inrtext + "<br /><span>" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
                                         }
                                     } else {
                                         inrtext = inrtext + "<br />" + region_text[z];
@@ -84,6 +84,9 @@
                             }
                         }
                         rt.innerHTML = "<h1>" + inrtext + "</h1>"
+                    }
+                    if (code_index != -1){
+                        Callfunc();
                     }
                 })
         </script>
@@ -116,7 +119,6 @@
                         }
                     }
                 })
-            
         </script>
     </head>
     <title>Join Our Discord and Play Now!!!</title>
@@ -127,16 +129,89 @@
             </div>
         </div>
         <div class="selectjoinregion" style="margin-top: 1vh;">
-            <h1 id="regiontext">日本<br>한국<br>pilipinas<br><span>Region Select</span><br>ประเทศไทย<br>Việt Nam<br>Indonesia</h1>
-            <div class="buttom"></div>
+            <h1 id="regiontext">日本<br>한국<br>pilipinas<br><span id="rgndisplaytextspn">Region Select</span><br>ประเทศไทย<br>Việt Nam<br>Indonesia</h1>
+            <div class="buttom">
+                <select id="selectRegionDropDown" onchange="TextDisplayRegionChange()">
+                    <optgroup label="------------------------------------" id="topchoiceregiondisplay">
+                        <option value="DEF" selected disabled id="defselectdisplayregion">Region Select</option>
+                    </optgroup>
+                    <optgroup label="------------------------------------">
+                        <option value="Brunei">Brunei</option>
+                        <option value="Cambodia">Cambodia / កម្ពុជា។</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Japan">Japan / 日本</option>
+                        <option value="Laos">Laos / ປະເທດລາວ</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Mongolia">Mongolia / Монгол</option>
+                        <option value="Myanmar">Myanmar / မြန်မာပြည်</option>
+                        <option value="Philippines">Philippines / pilipinas</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="South Korea">South Korea / 한국</option>
+                        <option value="Thailand">Thailand / ประเทศไทย</option>
+                        <option value="Vietnam">Vietnam / Việt Nam</option>
+                    </optgroup>
+                </select>
+            </div>
         </div>
         <div class="notice">
             <div class="continuebutton">
-                <button class="btndiscord" onclick="window.location.href='https://discord.gg/9ASGD4dEpu';"></button>
+                <button class="btndiscord" id="joinButtondis" onclick="window.location.href='https://discord.gg/9ASGD4dEpu';"></button>
                 <span><h1>Continue ------------ >></h1></span>
             </div>
+            <script>
+                function TextDisplayRegionChange(){
+                    var regionspan = document.getElementById('rgndisplaytextspn');
+                    var regionselectdrop = document.getElementById('selectRegionDropDown').value;
+                    if (regionselectdrop == "Japan" || regionselectdrop == "日本"){
+                        document.getElementById('joinButtondis').onclick = function discordJP(){
+                            window.location.href='https://google.com';
+                        };
+                    } else if (regionselectdrop == "South Korea" || regionselectdrop == "한국"){
+                        document.getElementById('joinButtondis').onclick = function discordKR(){
+                            window.location.href='https://google.com';
+                        };
+                    } else {
+                        document.getElementById('joinButtondis').onclick = function discordSEA(){
+                            window.location.href='https://discord.gg/9ASGD4dEpu';
+                        };
+                    }
+                    regionspan.innerText = regionselectdrop;
+                }
+                function Callfunc(){
+                    var topchoiceregdis = document.getElementById('topchoiceregiondisplay');
+                    var topchoiceadd = document.createElement('option');
+                    topchoiceadd.value = region_text[code_index];
+                    topchoiceadd.text = region_text[code_index] + " (" + region_text_eng[code_index] + ")";
+                    topchoiceadd.selected = true;
+                    topchoiceregdis.append(topchoiceadd);
+                    if (code_index == 8){
+                        document.getElementById('joinButtondis').onclick = function discordJP(){
+                            window.location.href='https://google.com';
+                        };
+                    } else if (code_index == 1){
+                        document.getElementById('joinButtondis').onclick = function discordKR(){
+                            window.location.href='https://google.com';
+                        };
+                    }
+                }
+            </script>
             <h1 id="n1">Notice: This site is currently under maintenance</h1>
             <p id="n2">The site may not work as intended for this while, feel free to explore our socials for the time being. Your patience is appreciated.</p>
         </div>
+        <script>
+            var hone = document.getElementById('n1');
+            var htwo = document.getElementById('n2');
+            hone.style.transition = 'all 700ms, opacity 500ms';
+            setTimeout(function(){
+                var honeHeight = hone.offsetHeight;
+                var honeHeightFinal = (honeHeight-15) * -1;
+                hone.style.marginBottom = honeHeightFinal;
+                hone.style.opacity = '0';
+            }, 5000)
+            setTimeout(function(){
+                hone.remove();
+                htwo.style.paddingTop = '15px';
+            }, 5700)
+        </script>
     </body>
 </html>
