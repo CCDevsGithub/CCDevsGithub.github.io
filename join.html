@@ -123,6 +123,12 @@
     </head>
     <title>Join Our Discord and Play Now!!!</title>
     <body>
+        <div id="preloadpg">
+            <div class="preloadcnt">
+                <embed src ="Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+                <p><mark>We are looking for volunteers to join the Collegiate Crash team!!. For queries and applications, kindly contact us at apply@collegiatecrash.com</p>
+            </div>
+        </div>
         <div class="menu">
             <div class="menulogo">
                 <embed src ="Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
@@ -159,6 +165,10 @@
                 <span><h1>Continue ------------ >></h1></span>
             </div>
             <script>
+                var onload_ = document.getElementById("preloadpg");
+                window.addEventListener("load", function(){
+                    onload_.style.display="none";
+                })
                 function TextDisplayRegionChange(){
                     var regionspan = document.getElementById('rgndisplaytextspn');
                     var regionselectdrop = document.getElementById('selectRegionDropDown').value;
@@ -207,11 +217,11 @@
                 var honeHeightFinal = (honeHeight-15) * -1;
                 hone.style.marginBottom = honeHeightFinal;
                 hone.style.opacity = '0';
-            }, 5000)
+            }, 4000)
             setTimeout(function(){
                 hone.remove();
                 htwo.style.paddingTop = '15px';
-            }, 5700)
+            }, 4700)
         </script>
     </body>
 </html>

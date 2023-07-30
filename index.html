@@ -7,6 +7,12 @@
     </head>
     <title>Collegiate Crash: Your home for the collegiate competitive experience</title>
     <body>
+        <div id="preloadpg">
+            <div class="preloadcnt">
+                <embed src ="Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+                <p><mark>We are looking for volunteers to join the Collegiate Crash team!!. For queries and applications, kindly contact us at apply@collegiatecrash.com</p>
+            </div>
+        </div>
         <div class="menu">
             <div class="menulogo">
                 <embed src ="Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
@@ -28,6 +34,10 @@
                 </div>
             </div>
             <script>
+                var onload_ = document.getElementById("preloadpg");
+                window.addEventListener("load", function(){
+                    onload_.style.display="none";
+                })
                 const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
                 const region_header = ['注意:このサイトは現在メンテナンス中です',
                 '알림: 이 사이트는 현재 유지 관리 중입니다',
