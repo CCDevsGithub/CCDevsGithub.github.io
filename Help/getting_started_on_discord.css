@@ -130,6 +130,12 @@ mark {
     }
 }
 @media screen and (max-width: 600px){
+    .mainContent h1{
+        font-size: 4em;
+        color: white;
+        margin-bottom: 0px;
+        margin-top: 12px;
+    }
     .img2{
         margin-left: 0px;
         display: none;
