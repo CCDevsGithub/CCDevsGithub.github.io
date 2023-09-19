@@ -92,7 +92,7 @@ body{
 .continuebutton{
     position: relative;
     width: 100vw;
-    height: calc(60vh - 55vw);
+    height: calc(55vh - 55vw);
     min-height: 1.5cm;
     background-color: #424242;
     font-family: Arial, sans-serif;
@@ -106,7 +106,7 @@ body{
 .continuebutton:before{
     position: relative;
     width: 100vw;
-    height: calc(60vh - 55vw);
+    height: calc(55vh - 55vw);
     min-height: 1.5cm;
     background-color: #424242;
     font-family: Arial, sans-serif;
@@ -118,7 +118,7 @@ body{
 .continuebutton:before:hover{
     position: relative;
     width: 100vw;
-    height: calc(60vh - 55vw);
+    height: calc(55vh - 55vw);
     min-height: 1.5cm;
     background-color: #424242;
     font-family: Arial, sans-serif;
@@ -133,7 +133,7 @@ body{
     position: absolute;
     right: 10vh;
     margin-top: 0.35cm;
-    padding-top: calc((60vh - 60vw)/2);
+    padding-top: calc((50vh - 57vw)/2);
     pointer-events: none;
     color: #191919;
 }
@@ -141,7 +141,7 @@ body{
 .btndiscord{
     position: absolute;
     width: 100vw;
-    height: calc(60vh - 55vw);
+    height: calc(55vh - 55vw);
     min-height: 1.5cm;
     border: none;
     animation-duration: 0.8s;
@@ -166,7 +166,7 @@ body{
         min-height: 0px;
     }
     to {
-        height: calc(60vh - 55vw);
+        height: calc(55vh - 55vw);
         min-height: 1.5cm;
     }
 }
