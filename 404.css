@@ -72,6 +72,7 @@ mark {
     color: gray;
     margin-top: 1em;
     font-weight: normal;
+    padding-bottom: calc(50px + 5em);
 }
 @media screen and (max-width: 900px){
     .mainContent{
