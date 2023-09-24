@@ -74,6 +74,7 @@ mark {
     font-weight: normal;
     padding-bottom: calc(50px + 10em);
     text-align: center;
+    margin-right: 2em;
 }
 @media screen and (max-width: 900px){
     .mainContent{
