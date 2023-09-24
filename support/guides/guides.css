@@ -1,0 +1,139 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #111111;
+}
+.menu{
+    height: 17vw;
+    max-height: 3.1cm;
+    background-color: #191919;
+}
+::selection{
+    background-color: #424242;
+    color: white;
+}
+.menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
+    position: absolute;
+    padding-top: min(0.6cm, 3vw);
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+mark {
+    background-color: #191919;
+    color: #424242;
+}
+.mainContent{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    min-width: calc(900px - 4em);
+}
+.mainContent h1{
+    font-size: 4em;
+    color: white;
+    margin-bottom: 0px;
+}
+.mainContent h2{
+    font-size: 1em;
+    color: gray;
+    margin-top: 0.5em;
+    font-weight: normal;
+}
+.ListOG{
+    height: 100vw;
+}
+.EntryGuide{
+    min-height: 10em;
+    background-color: #242424;
+    border-radius: 1em;
+}
+.EntryGuide h1{
+    font-size: 2em;
+    letter-spacing: 1px;
+    padding-top: 0.5em;
+    padding-left: 5.1em;
+}
+.EntryGuide h2{
+    margin-top: 0.5em;
+    font-size: 1em;
+    padding-left: 10.3em;
+    padding-right: 1.5em;
+}
+.EntryGuide img{
+    width: 9em;
+    position: absolute;
+    border-radius: 1em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+.EntryGuide button{
+    position: absolute;
+    width: 100%;
+    height: 12em;
+    border: none;
+    border-radius: 1em;
+    opacity: 0%;
+}
+@media screen and (max-width: 900px){
+    .mainContent{
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin-left: 2em;
+        transform: translate(0%, 0%);
+        min-width: 0px;
+    }
+}
+@media screen and (max-width: 600px){
+    .mainContent{
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin-left: 0em;
+        transform: translate(0%, 0%);
+        min-width: 0px;
+    }
+    .mainContent h1{
+        font-size: 4em;
+        color: white;
+        margin-bottom: 0px;
+        margin-top: 12px;
+    }
+    .EntryGuide h1{
+        font-size: 2em;
+        letter-spacing: 1px;
+        padding-top: 0.5em;
+        padding-left: 5.1em;
+    }
+}
