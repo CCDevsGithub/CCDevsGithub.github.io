@@ -1,0 +1,241 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #111111;
+}
+.menu{
+    height: 17vw;
+    max-height: 3.1cm;
+    background-color: #191919;
+}
+::selection{
+    background-color: #424242;
+    color: white;
+}
+.menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
+    position: absolute;
+    padding-top: min(0.6cm, 3vw);
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+mark {
+    background-color: #191919;
+    color: #424242;
+}
+.mainContent{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    min-width: calc(900px - 4em);
+}
+.mainContent h1{
+    font-size: 4em;
+    color: white;
+    margin-bottom: 0px;
+}
+.mainContent h2{
+    padding-left: 0.5em;
+    font-size: 1em;
+    color: gray;
+    margin-top: 1em;
+    font-weight: normal;
+    padding-bottom: calc(50px + 10em);
+}
+.futherHelpBanner{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    min-width: calc(900px - 4em);
+}
+.futherHelpBannerWrapper{
+    background-color: #242424;
+    padding-top: 2em;
+}
+.futherHelpBanner h1{
+    text-align: center;
+    font-size: 4em;
+    color: white;
+    margin-bottom: 0px;
+}
+.futherHelpBanner h2{
+    text-align: center;
+    padding-left: 0.5em;
+    font-size: 1em;
+    color: gray;
+    margin-top: 1em;
+    font-weight: normal;
+    margin-right: 1em;
+}
+.futherHelpBannerButtons{
+    margin-left: 50%;
+    padding-top: 1em;
+    max-width: 24.8em;
+    padding-bottom: calc(10em);
+    transform: translate(-50%, 0%);
+}
+.futherHelpBannerButton1{
+    top: 6px;
+    position: relative;
+    width: 10em;
+    margin-left: 3.8em;
+    height: 4em;
+    border-radius: 1em;
+    border: none;
+    transition: ease-out 0.5s;
+    background-color: #5865F2;
+}
+.futherHelpBannerButton2{
+    margin-top: 0px;
+    margin-left: 0.4em;
+    width: 10em;
+    height: 4.2em;
+    border-radius: 1em;
+    border: none;
+    transition: ease-out 0.5s;
+    background-color: #191919;
+    color: lightgray;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.futherHelpBannerButton2 p{
+    position: relative;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    top: -0.1em;
+    margin: none;
+}
+.futherHelpBannerButton1:hover{
+    width: 14em;
+    margin-left: -0.2em;
+}
+.futherHelpBannerButton1:hover .DiscordBtnHelpBanner1{
+    left: calc(3em - 15px);
+}
+.futherHelpBannerButton1:hover .DiscordBtnHelpBanner2{
+    opacity: 1;
+}
+.futherHelpBannerButton2:hover{
+    width: 14em;
+}
+.DiscordBtnHelpBanner1{
+    position: absolute;
+    left: calc(5em - 15px);
+    transition: ease-out 0.5s;
+    filter: invert(0.9);
+}
+.DiscordBtnHelpBanner2{
+    height: 30px;
+    width: 130px;
+    opacity: 0;
+    transition: ease-out 0.5s;
+    filter: invert(0.9);
+}
+.checkFAQsandGuides{
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    background-color: #7a7a7a;
+}
+.checkFAQsandGuides h1{
+    color: #ffffff;
+    letter-spacing: 0px;
+    padding-top: 0.1em;
+    font-size: 7em;
+    margin: 0px;
+    padding-left: 8vw;
+    padding-top: 0.2em;
+}
+.checkFAQsandGuides h2{
+    color: #a6a6a6;
+    letter-spacing: 0px;
+    font-size: 3em;
+    margin: 0px;
+    text-align: right;
+    padding-top: 0.8em;
+    padding-right: 0.4em;
+    padding-bottom: 0.4em;
+}
+@media screen and (max-width: 900px){
+    .mainContent{
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin-left: 2em;
+        transform: translate(0%, 0%);
+        min-width: 0px;
+    }
+    .futherHelpBanner{
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin-left: 2em;
+        transform: translate(0%, 0%);
+        min-width: 0px;
+    }
+    .futherHelpBannerButton2{
+        position: absolute;
+        left: 5.8em;
+        margin-left: 0px;
+        margin-top: 5em;
+    }
+    .futherHelpBannerButton2:hover{
+        margin-left: -2em;
+    }
+    .futherHelpBannerButton1{
+        margin-left: 5.8em;
+    }
+    .futherHelpBannerButton1:hover{
+        width: 14em;
+        margin-left: 3.8em;
+    }
+    .futherHelpBannerButtons{
+        max-width: 16em;
+        padding-bottom: 13em;
+    }
+}
+@media screen and (max-width: 600px){
+    .mainContent h1{
+        font-size: 4em;
+        color: white;
+        margin-bottom: 0px;
+        margin-top: 12px;
+    }
+    .futherHelpBanner h1{
+        font-size: 4em;
+        color: white;
+        margin-bottom: 0px;
+        margin-top: 12px;
+    }
+}
