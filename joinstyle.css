@@ -13,6 +13,15 @@ body{
     color: red;
 }
 .menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
     position: absolute;
     padding-top: min(0.6cm, 3vw);
     left: 50%;
