@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     padding: 0px;
     margin: 0px;
@@ -57,14 +60,13 @@ mark {
 .mainContent{
     font-family: Arial, sans-serif;
     font-weight: bold;
-    margin-left: 50%;
-    transform: translate(-50%, 0%);
-    min-width: calc(900px - 4em);
+    text-align: center;
 }
 .mainContent h1{
     font-size: 4em;
     color: white;
     margin-bottom: 0px;
+    margin-top: 20vh;
 }
 .mainContent h2{
     padding-left: 0.5em;
@@ -80,6 +82,9 @@ mark {
     margin-left: 50%;
     transform: translate(-50%, 0%);
     min-width: calc(900px - 4em);
+}
+hr{
+    margin: 0px;
 }
 .futherHelpBannerWrapper{
     background-color: #242424;
@@ -176,8 +181,10 @@ mark {
     padding-top: 0.1em;
     font-size: 7em;
     margin: 0px;
-    padding-left: 8vw;
+    margin-left: 50%;
+    transform: translate(-65%, 0%);
     padding-top: 0.2em;
+    max-width: 8em;
 }
 .checkFAQsandGuides h2{
     color: #a6a6a6;
@@ -185,9 +192,23 @@ mark {
     font-size: 3em;
     margin: 0px;
     text-align: right;
-    padding-top: 0.8em;
-    padding-right: 0.4em;
+    padding-top: 0.4em;
+    margin-right: 50%;
+    transform: translate(66%, 0%);
     padding-bottom: 0.4em;
+}
+.NonParticipantSupport{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.NonParticipantSupport h1{
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-size: 3em;
+    margin: 0px;
+    margin-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 10px;
 }
 @media screen and (max-width: 900px){
     .mainContent{
