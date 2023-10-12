@@ -168,3 +168,41 @@ mark {
     overflow: hidden;
     transition: ease 0.4s;
 }
+@media screen and (max-width: 950px){
+    .menu{
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 5.2cm;
+        max-height: 5.2cm;
+        background-color: #191919;
+        z-index: 1;
+    }
+    .menuimg{
+        height: 3.8cm;
+        max-height: 3.8cm;
+    }
+    .menuelements{
+        position: absolute;
+        left: 0%;
+        display: none;
+        width: 84%;
+        margin-left: 10%;
+        text-align: center;
+        top: 2cm;
+    }
+    #menu_1{
+        padding-left: 24px;
+    }
+    .menuelements a{
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: aliceblue;
+        font-size: small;
+        text-align: center;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+}

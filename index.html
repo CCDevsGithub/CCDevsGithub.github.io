@@ -13,7 +13,7 @@
                     <a href="https://www.collegiatecrash.com" class="menuimglink" id="menuimglink_"><embed src ="Crsh.svg" class="menuimg" id="menuimg_" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
                 </div>
                 <div class="menuelements" id="menuelements_">
-                    <a href="https://www.collegiatecrash.com/news/" class="select" id="1menu_" style="padding-left: 8px;">NEWS</a>
+                    <a href="https://www.collegiatecrash.com/news/" class="select" id="menu_1" style="padding-left: 8px;">NEWS</a>
                     <a href="https://www.collegiatecrash.com/schedule/" class="select" id="2menu_">SCHEDULE</a>
                     <a href="https://www.collegiatecrash.com/support/" class="select" id="3menu_">SUPPORT</a>
                     <a href="https://www.collegiatecrash.com/socials/" class="select" id="4menu_">OUR SOCIALS</a>
@@ -33,7 +33,6 @@
                     </a>
                 </div>
                 <div id="RegionLanguageChange_">
-
                 </div>
                 <script>
                     function RegionLanguageChangeDrop(){
@@ -71,11 +70,12 @@
                         }
                     }
                     var runTrigger = false;
+                    var preAnimationtop = true;
                     var menulogoid = document.getElementById("menulogo_");
                     var menuimgid = document.getElementById("menuimg_");
                     var menuid = document.getElementById("menu_");
                     var menuimglinkid = document.getElementById("menuimglink_");
-                    var onemenu_ = document.getElementById("1menu_");
+                    var onemenu_ = document.getElementById("menu_1");
                     var twomenu_ = document.getElementById("2menu_");
                     var threemenu_ = document.getElementById("3menu_");
                     var fourmenu_ = document.getElementById("4menu_");
@@ -85,111 +85,168 @@
                     var menuelementsid = document.getElementById("menuelements_")
                     function TriggerMenuTopAnimation(){
                         runTrigger = true;
+                        if(preAnimationtop == true){
+                            if(window.innerWidth > 960){
+                                setTimeout(() => {
+                                    menuimglinkid.style.left = "0px";
+                                    menuid.style.transition = "ease 0.4s";
+                                    menuimgid.style.transition = "ease 0.6s";
+                                    menulogoid.style.transition = "linear 0.6s";
+                                    menuimgid.style.height = "0.8cm";
+                                    menulogoid.style.paddingTop = "0.35cm";
+                                }, "0");
+                                setTimeout(() => {
+                                    menuid.style.maxHeight = "1.55cm";
+                                    menuid.style.height = "8.5vw";
+                                }, "200");
+                                setTimeout(() => {
+                                    menuimgid.style.height = "0.8cm";
+                                    menulogoid.style.transition = "ease 0.9s";
+                                    menuimgid.style.transition = null;
+                                    menulogoid.style.left = "4%";
+                                    aoneid.style.display = "initial";
+                                    atwoid.style.display = "initial";
+                                    menuelementsid.style.display = "initial";
+                                }, "900");
+                                setTimeout(() => {
+                                    fivemenu_.style.opacity = "1";
+                                }, "1000");
+                                setTimeout(() => {
+                                    fourmenu_.style.opacity = "1";
+                                }, "1100");
+                                setTimeout(() => {
+                                    threemenu_.style.opacity = "1";
+                                }, "1200");
+                                setTimeout(() => {
+                                    twomenu_.style.opacity = "1";
+                                }, "1300");
+                                setTimeout(() => {
+                                    onemenu_.style.opacity = "1";
+                                }, "1400");
+                                setTimeout(() => {
+                                    aoneid.style.opacity = "1";
+                                }, "1050");
+                                setTimeout(() => {
+                                    atwoid.style.opacity = "1";
+                                }, "1250");
+                            } else {
+                                setTimeout(() => {
+                                    menuimglinkid.style.left = "0px";
+                                    menuid.style.transition = "ease 0.4s";
+                                    menuimgid.style.transition = "ease 0.6s";
+                                    menulogoid.style.transition = "linear 0.6s";
+                                    menuimgid.style.height = "1.3cm";
+                                    menulogoid.style.paddingTop = "0.35cm";
+                                }, "0");
+                                setTimeout(() => {
+                                    menuelementsid.style.display = "initial";
+                                }, "10");
+                                setTimeout(() => {
+                                    fivemenu_.style.opacity = "1";
+                                    fourmenu_.style.opacity = "1";
+                                }, "150");
+                                setTimeout(() => {
+                                    threemenu_.style.opacity = "1";
+                                    twomenu_.style.opacity = "1";
+                                    onemenu_.style.opacity = "1";
+                                }, "250");
+                            }
+                        }
+                    }
+                    if(window.innerWidth > 960){
                         setTimeout(() => {
-                            menuimglinkid.style.left = "0px";
-                            menuid.style.transition = "ease 0.4s";
-                            menuimgid.style.transition = "ease 0.6s";
-                            menulogoid.style.transition = "linear 0.6s";
-                            menuimgid.style.height = "0.8cm";
-                            menulogoid.style.paddingTop = "0.35cm";
-                        }, "0");
-                        setTimeout(() => {
-                            menuid.style.maxHeight = "1.55cm";
-                            menuid.style.height = "8.5vw";
-                        }, "200");
-                        setTimeout(() => {
-                            menuimgid.style.height = "0.8cm";
-                            menulogoid.style.transition = "ease 0.9s";
-                            menuimgid.style.transition = null;
-                            menulogoid.style.left = "4%";
-                            aoneid.style.display = "initial";
-                            atwoid.style.display = "initial";
-                            menuelementsid.style.display = "initial";
-                        }, "900");
-                        setTimeout(() => {
-                            fivemenu_.style.opacity = "1";
-                        }, "1000");
-                        setTimeout(() => {
-                            fourmenu_.style.opacity = "1";
+                            if(runTrigger == false){
+                                menuimglinkid.style.left = "0px";
+                                menuid.style.transition = "ease 0.4s";
+                                menuimgid.style.transition = "ease 0.6s";
+                                menulogoid.style.transition = "linear 0.6s";
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.paddingTop = "0.35cm";
+                            }
                         }, "1100");
                         setTimeout(() => {
-                            threemenu_.style.opacity = "1";
-                        }, "1200");
-                        setTimeout(() => {
-                            twomenu_.style.opacity = "1";
+                            if(runTrigger == false){
+                                menuid.style.maxHeight = "1.55cm";
+                                menuid.style.height = "8.5vw";
+                            }
                         }, "1300");
                         setTimeout(() => {
-                            onemenu_.style.opacity = "1";
-                        }, "1400");
+                            if(runTrigger == false){
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.transition = "ease 0.9s";
+                                menuimgid.style.transition = null;
+                                menulogoid.style.left = "4%";
+                                aoneid.style.display = "initial";
+                                atwoid.style.display = "initial";
+                                menuelementsid.style.display = "initial";
+                            }
+                        }, "2000");
                         setTimeout(() => {
-                            aoneid.style.opacity = "1";
-                        }, "1050");
+                            if(runTrigger == false){
+                                fivemenu_.style.opacity = "1";
+                            }
+                        }, "2100");
                         setTimeout(() => {
-                            atwoid.style.opacity = "1";
+                            if(runTrigger == false){
+                                fourmenu_.style.opacity = "1";
+                            }
+                        }, "2200");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                threemenu_.style.opacity = "1";
+                            }
+                        }, "2300");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                twomenu_.style.opacity = "1";
+                            }
+                        }, "2400");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                onemenu_.style.opacity = "1";
+                            }
+                        }, "2500");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                aoneid.style.opacity = "1";
+                                preAnimationtop = false;
+                            }
+                        }, "2150");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                atwoid.style.opacity = "1";
+                            }
+                        }, "2350");
+                    } else {
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                menuimglinkid.style.left = "0px";
+                                menuid.style.transition = "ease 0.4s";
+                                menuimgid.style.transition = "ease 0.6s";
+                                menulogoid.style.transition = "linear 0.6s";
+                                menuimgid.style.height = "1.3cm";
+                                menulogoid.style.paddingTop = "0.35cm";
+                            }
+                        }, "1100");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                menuelementsid.style.display = "initial";
+                            }
+                        }, "1110");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                fivemenu_.style.opacity = "1";
+                                fourmenu_.style.opacity = "1";
+                            }
                         }, "1250");
+                        setTimeout(() => {
+                            if(runTrigger == false){
+                                threemenu_.style.opacity = "1";
+                                twomenu_.style.opacity = "1";
+                                onemenu_.style.opacity = "1";
+                            }
+                        }, "1350");
                     }
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            menuimglinkid.style.left = "0px";
-                            menuid.style.transition = "ease 0.4s";
-                            menuimgid.style.transition = "ease 0.6s";
-                            menulogoid.style.transition = "linear 0.6s";
-                            menuimgid.style.height = "0.8cm";
-                            menulogoid.style.paddingTop = "0.35cm";
-                        }
-                    }, "3100");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            menuid.style.maxHeight = "1.55cm";
-                            menuid.style.height = "8.5vw";
-                        }
-                    }, "3300");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            menuimgid.style.height = "0.8cm";
-                            menulogoid.style.transition = "ease 0.9s";
-                            menuimgid.style.transition = null;
-                            menulogoid.style.left = "4%";
-                            aoneid.style.display = "initial";
-                            atwoid.style.display = "initial";
-                            menuelementsid.style.display = "initial";
-                        }
-                    }, "4000");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            fivemenu_.style.opacity = "1";
-                        }
-                    }, "4100");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            fourmenu_.style.opacity = "1";
-                        }
-                    }, "4200");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            threemenu_.style.opacity = "1";
-                        }
-                    }, "4300");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            twomenu_.style.opacity = "1";
-                        }
-                    }, "4400");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            onemenu_.style.opacity = "1";
-                        }
-                    }, "4500");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            aoneid.style.opacity = "1";
-                        }
-                    }, "4150");
-                    setTimeout(() => {
-                        if(runTrigger == false){
-                            atwoid.style.opacity = "1";
-                        }
-                    }, "4350");
                 </script>
             </div>
             <div class="mainContent" id="mainContent_" style="height: 5000px;">
@@ -200,14 +257,14 @@
                     var vidmobid = document.getElementById("vidmob_")
                     setTimeout(() => {
                         vidmobid.style.transition = "ease 10s";
-                    }, "3500");
+                    }, "1500");
                     setTimeout(() => {
                         vidmobid.style.opacity = "0.05";
                         vidmobid.style.filter = "blur(10px)";
-                    }, "3600");
+                    }, "1600");
                     setTimeout(() => {
                         vidmobid.style.transition = "ease 0.5s";
-                    }, "13600");
+                    }, "11600");
                 </script>
                 <div style="position: absolute; top: 0px; text-align: center; width: 100vw; height: 69vh; max-height: 56.25vw;" class="mainContentText">
                     <h1 style="margin-top: min(28vh, 26vw);">Welcome to Collegiate Crash</h1>
