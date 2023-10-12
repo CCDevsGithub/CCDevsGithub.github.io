@@ -63,7 +63,7 @@ mark {
     text-align: center;
 }
 .mainContent h1{
-    font-size: 4em;
+    font-size: 5em;
     color: white;
     margin-bottom: 0px;
     margin-top: 20vh;
@@ -229,13 +229,15 @@ hr{
         position: absolute;
         left: 5.8em;
         margin-left: 0px;
-        margin-top: 5em;
+        margin-top: 7em;
+        height: 6em;
     }
     .futherHelpBannerButton2:hover{
         margin-left: -2em;
     }
     .futherHelpBannerButton1{
         margin-left: 5.8em;
+        height: 6em;
     }
     .futherHelpBannerButton1:hover{
         width: 14em;
