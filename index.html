@@ -35,6 +35,12 @@
                 <div id="RegionLanguageChange_">
                 </div>
                 <script>
+                    function onMobileView(){
+                        if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
+                            window.location.replace("https://m.collegiatecrash.com");
+                        }
+                    }
+                    console.log(onMobileView())
                     function RegionLanguageChangeDrop(){
                         var RegionButtonTextid = document.getElementById("RegionButtonText");
                         var RegionButtonIcon = document.getElementById("RegionButtonIcon");
@@ -86,92 +92,19 @@
                     function TriggerMenuTopAnimation(){
                         runTrigger = true;
                         if(preAnimationtop == true){
-                            if(window.innerWidth > 960){
-                                setTimeout(() => {
-                                    menuimglinkid.style.left = "0px";
-                                    menuid.style.transition = "ease 0.4s";
-                                    menuimgid.style.transition = "ease 0.6s";
-                                    menulogoid.style.transition = "linear 0.6s";
-                                    menuimgid.style.height = "0.8cm";
-                                    menulogoid.style.paddingTop = "0.35cm";
-                                }, "0");
-                                setTimeout(() => {
-                                    menuid.style.maxHeight = "1.55cm";
-                                    menuid.style.height = "8.5vw";
-                                }, "200");
-                                setTimeout(() => {
-                                    menuimgid.style.height = "0.8cm";
-                                    menulogoid.style.transition = "ease 0.9s";
-                                    menuimgid.style.transition = null;
-                                    menulogoid.style.left = "4%";
-                                    aoneid.style.display = "initial";
-                                    atwoid.style.display = "initial";
-                                    menuelementsid.style.display = "initial";
-                                }, "900");
-                                setTimeout(() => {
-                                    fivemenu_.style.opacity = "1";
-                                }, "1000");
-                                setTimeout(() => {
-                                    fourmenu_.style.opacity = "1";
-                                }, "1100");
-                                setTimeout(() => {
-                                    threemenu_.style.opacity = "1";
-                                }, "1200");
-                                setTimeout(() => {
-                                    twomenu_.style.opacity = "1";
-                                }, "1300");
-                                setTimeout(() => {
-                                    onemenu_.style.opacity = "1";
-                                }, "1400");
-                                setTimeout(() => {
-                                    aoneid.style.opacity = "1";
-                                }, "1050");
-                                setTimeout(() => {
-                                    atwoid.style.opacity = "1";
-                                }, "1250");
-                            } else {
-                                setTimeout(() => {
-                                    menuimglinkid.style.left = "0px";
-                                    menuid.style.transition = "ease 0.4s";
-                                    menuimgid.style.transition = "ease 0.6s";
-                                    menulogoid.style.transition = "linear 0.6s";
-                                    menuimgid.style.height = "1.3cm";
-                                    menulogoid.style.paddingTop = "0.35cm";
-                                }, "0");
-                                setTimeout(() => {
-                                    menuelementsid.style.display = "initial";
-                                }, "10");
-                                setTimeout(() => {
-                                    fivemenu_.style.opacity = "1";
-                                    fourmenu_.style.opacity = "1";
-                                }, "150");
-                                setTimeout(() => {
-                                    threemenu_.style.opacity = "1";
-                                    twomenu_.style.opacity = "1";
-                                    onemenu_.style.opacity = "1";
-                                }, "250");
-                            }
-                        }
-                    }
-                    if(window.innerWidth > 960){
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            setTimeout(() => {
                                 menuimglinkid.style.left = "0px";
                                 menuid.style.transition = "ease 0.4s";
                                 menuimgid.style.transition = "ease 0.6s";
                                 menulogoid.style.transition = "linear 0.6s";
                                 menuimgid.style.height = "0.8cm";
                                 menulogoid.style.paddingTop = "0.35cm";
-                            }
-                        }, "1100");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "0");
+                            setTimeout(() => {
                                 menuid.style.maxHeight = "1.55cm";
                                 menuid.style.height = "8.5vw";
-                            }
-                        }, "1300");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "200");
+                            setTimeout(() => {
                                 menuimgid.style.height = "0.8cm";
                                 menulogoid.style.transition = "ease 0.9s";
                                 menuimgid.style.transition = null;
@@ -179,74 +112,93 @@
                                 aoneid.style.display = "initial";
                                 atwoid.style.display = "initial";
                                 menuelementsid.style.display = "initial";
-                            }
-                        }, "2000");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "900");
+                            setTimeout(() => {
                                 fivemenu_.style.opacity = "1";
-                            }
-                        }, "2100");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1000");
+                            setTimeout(() => {
                                 fourmenu_.style.opacity = "1";
-                            }
-                        }, "2200");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1100");
+                            setTimeout(() => {
                                 threemenu_.style.opacity = "1";
-                            }
-                        }, "2300");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1200");
+                            setTimeout(() => {
                                 twomenu_.style.opacity = "1";
-                            }
-                        }, "2400");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1300");
+                            setTimeout(() => {
                                 onemenu_.style.opacity = "1";
-                            }
-                        }, "2500");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1400");
+                            setTimeout(() => {
                                 aoneid.style.opacity = "1";
-                                preAnimationtop = false;
-                            }
-                        }, "2150");
-                        setTimeout(() => {
-                            if(runTrigger == false){
+                            }, "1050");
+                            setTimeout(() => {
                                 atwoid.style.opacity = "1";
-                            }
-                        }, "2350");
-                    } else {
-                        setTimeout(() => {
-                            if(runTrigger == false){
-                                menuimglinkid.style.left = "0px";
-                                menuid.style.transition = "ease 0.4s";
-                                menuimgid.style.transition = "ease 0.6s";
-                                menulogoid.style.transition = "linear 0.6s";
-                                menuimgid.style.height = "1.3cm";
-                                menulogoid.style.paddingTop = "0.35cm";
-                            }
-                        }, "1100");
-                        setTimeout(() => {
-                            if(runTrigger == false){
-                                menuelementsid.style.display = "initial";
-                            }
-                        }, "1110");
-                        setTimeout(() => {
-                            if(runTrigger == false){
-                                fivemenu_.style.opacity = "1";
-                                fourmenu_.style.opacity = "1";
-                            }
-                        }, "1250");
-                        setTimeout(() => {
-                            if(runTrigger == false){
-                                threemenu_.style.opacity = "1";
-                                twomenu_.style.opacity = "1";
-                                onemenu_.style.opacity = "1";
-                            }
-                        }, "1350");
+                            }, "1250");
+                        }
                     }
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimglinkid.style.left = "0px";
+                            menuid.style.transition = "ease 0.4s";
+                            menuimgid.style.transition = "ease 0.6s";
+                            menulogoid.style.transition = "linear 0.6s";
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.paddingTop = "0.35cm";
+                        }
+                    }, "1100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuid.style.maxHeight = "1.55cm";
+                            menuid.style.height = "8.5vw";
+                        }
+                    }, "1300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.transition = "ease 0.9s";
+                            menuimgid.style.transition = null;
+                            menulogoid.style.left = "4%";
+                            aoneid.style.display = "initial";
+                            atwoid.style.display = "initial";
+                            menuelementsid.style.display = "initial";
+                        }
+                    }, "2000");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fivemenu_.style.opacity = "1";
+                        }
+                    }, "2100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fourmenu_.style.opacity = "1";
+                        }
+                    }, "2200");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            threemenu_.style.opacity = "1";
+                        }
+                    }, "2300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            twomenu_.style.opacity = "1";
+                        }
+                    }, "2400");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            onemenu_.style.opacity = "1";
+                        }
+                    }, "2500");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            aoneid.style.opacity = "1";
+                            preAnimationtop = false;
+                        }
+                    }, "2150");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            atwoid.style.opacity = "1";
+                        }
+                    }, "2350");
                 </script>
             </div>
             <div class="mainContent" id="mainContent_" style="height: 5000px;">
@@ -256,11 +208,11 @@
                 <script>
                     var vidmobid = document.getElementById("vidmob_")
                     setTimeout(() => {
-                        vidmobid.style.transition = "ease 10s";
+                        vidmobid.style.transition = "ease 0.5s";
                     }, "1500");
                     setTimeout(() => {
-                        vidmobid.style.opacity = "0.05";
-                        vidmobid.style.filter = "blur(10px)";
+                        vidmobid.style.opacity = "1";
+                        vidmobid.style.filter = "blur(0px)";
                     }, "1600");
                     setTimeout(() => {
                         vidmobid.style.transition = "ease 0.5s";
