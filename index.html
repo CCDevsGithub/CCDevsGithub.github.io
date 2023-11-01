@@ -2,41 +2,257 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="home.css">
         <link rel="icon" href="Crsh_Icon_Inv.png" type="x-icon">
     </head>
     <title>Collegiate Crash: Your home for the collegiate competitive experience</title>
-    <body>
-        <div id="preloadpg">
-            <div class="preloadcnt">
-                <embed src ="Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
-                <p><mark>We are looking for volunteers to join the Collegiate Crash team!!. For queries and applications, kindly contact us at apply@collegiatecrash.com</p>
-            </div>
-        </div>
+    <body onscroll="TriggerMenuTopAnimation()" onresize="ChangeViewport()" style="width: 100vw; overflow-x: hidden;">
         <div class="onloadpg">
-            <div class="menu">
-                <div class="menulogo">
-                    <embed src ="Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+            <div class="menu" id="menu_">
+                <div class="menulogo" id="menulogo_">
+                    <a href="https://www.collegiatecrash.com" class="menuimglink" id="menuimglink_"><embed src ="Crsh.svg" class="menuimg" id="menuimg_" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
                 </div>
-            </div>
-            <div class="socials">
-                <div class="socialbtns">
-                    <div class="gridbtndiv">
-                        <button class="gridbtn1" onclick="window.location.href='https://twitter.com/CollegiateCrash';"><img style="height: 45%; pointer-events: none" src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg"/></button>
-                    </div>
-                    <div class="gridbtndiv">
-                        <button class="gridbtn2" onclick="window.location.href='https://www.twitch.tv/collegiatecrash';"><img style="height: 45%; pointer-events: none" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg"/></button>
-                    </div>
-                    <div class="gridbtndiv">
-                        <button class="gridbtn3" onclick="window.location.href='https://www.instagram.com';"><img style="height: 45%; pointer-events: none" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Instagram_Glyph_Gradient_RGB_logo.svg"/></button>
-                    </div>
-                    <div class="gridbtndiv">
-                        <button class="gridbtn4" onclick="window.location.href='join';"><img style="height: 45%; pointer-events: none" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg"/></button>
-                    </div>
+                <div class="menuelements" id="menuelements_">
+                    <a href="https://www.collegiatecrash.com/news/" class="select" id="menu_1" style="padding-left: 8px;">NEWS</a>
+                    <a href="https://www.collegiatecrash.com/schedule/" class="select" id="2menu_">SCHEDULE</a>
+                    <a href="https://www.collegiatecrash.com/support/" class="select" id="3menu_">SUPPORT</a>
+                    <a href="https://www.collegiatecrash.com/socials/" class="select" id="4menu_">OUR SOCIALS</a>
+                    <a href="https://www.collegiatecrash.com/watch_now/" class="select" id="5menu_">WATCH</a>
+                </div>
+                <div class="additionalButtonsMenu">
+                    <a href="https://www.collegiatecrash.com/join/" class="a1_" id="a1__">
+                        <div class="additionalButtonsMenu1_">
+                            <h2 style="margin: 0px;"><span>PLAY</span> NOW</h2>
+                        </div>
+                    </a>
+                    <a href="#RegionLanguageChange_" class="a2_" id="a2__">
+                        <div id="additionalButtonsMenu2__" class="additionalButtonsMenu2_" onclick="RegionLanguageChangeDrop()">
+                            <p id="RegionButtonText" style="font-size: 10px; font-family: Arial, sans-serif; font-weight: bold; color: #e6e6e6; margin: 0px; position: absolute; padding-bottom: 16%; right: 18%; transform: rotate(180deg);">Δ</p>
+                            <img src="GlobeIcon.svg" id="RegionButtonIcon" style="height: 75%; filter: invert(0.9); display:inline; padding-top: 5%; margin-left: -20%;">
+                        </div>
+                    </a>
+                </div>
+                <div id="RegionLanguageChange_">
                 </div>
                 <script>
+                    function onMobileView(){
+                        if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
+                            window.location.replace("https://m.collegiatecrash.com");
+                        }
+                    }
+                    console.log(onMobileView())
+                    function RegionLanguageChangeDrop(){
+                        var RegionButtonTextid = document.getElementById("RegionButtonText");
+                        var RegionButtonIcon = document.getElementById("RegionButtonIcon");
+                        var atwoid = document.getElementById("a2__");
+                        var additionalButtonsMenu2__id = document.getElementById("additionalButtonsMenu2__");
+                        if (additionalButtonsMenu2__id.style.backgroundColor != "rgb(233, 233, 233)"){
+                            atwoid.disabled = true;
+                            RegionButtonTextid.style.transition = "ease 0.4s";
+                            RegionButtonIcon.style.transition = "ease 0.4s";
+                            RegionButtonTextid.style.transform = "rotate(0deg)";
+                            RegionButtonTextid.style.paddingBottom = "0%";
+                            RegionButtonTextid.style.paddingTop = "16%";
+                            RegionButtonTextid.style.color = "black";
+                            RegionButtonIcon.style.filter = "invert(0.1)"
+                            additionalButtonsMenu2__id.style.backgroundColor = "rgb(233, 233, 233)";
+                            setTimeout(() => {
+                                atwoid.disabled = false;
+                            }, "500");
+                        } else {
+                            atwoid.disabled = true;
+                            RegionButtonTextid.style.transform = "rotate(-180deg)";
+                            RegionButtonTextid.style.paddingTop = "0%";
+                            RegionButtonTextid.style.paddingBottom = "16%";
+                            RegionButtonTextid.style.color = "white";
+                            RegionButtonIcon.style.filter = "invert(0.9)"
+                            additionalButtonsMenu2__id.style.backgroundColor = "#2e2e2e";
+                            setTimeout(() => {
+                                atwoid.disabled = false;
+                                RegionButtonTextid.style.transition = null;
+                                RegionButtonIcon.style.transition = null;
+                                RegionButtonTextid.style.transform = "rotate(180deg)";
+                            }, "500");
+                        }
+                    }
+                    var runTrigger = false;
+                    var preAnimationtop = true;
+                    var menulogoid = document.getElementById("menulogo_");
+                    var menuimgid = document.getElementById("menuimg_");
+                    var menuid = document.getElementById("menu_");
+                    var menuimglinkid = document.getElementById("menuimglink_");
+                    var onemenu_ = document.getElementById("menu_1");
+                    var twomenu_ = document.getElementById("2menu_");
+                    var threemenu_ = document.getElementById("3menu_");
+                    var fourmenu_ = document.getElementById("4menu_");
+                    var fivemenu_ = document.getElementById("5menu_");
+                    var aoneid = document.getElementById("a1__");
+                    var atwoid = document.getElementById("a2__");
+                    var menuelementsid = document.getElementById("menuelements_")
+                    function TriggerMenuTopAnimation(){
+                        runTrigger = true;
+                        if(preAnimationtop == true){
+                            setTimeout(() => {
+                                menuimglinkid.style.left = "0px";
+                                menuid.style.transition = "ease 0.4s";
+                                menuimgid.style.transition = "ease 0.6s";
+                                menulogoid.style.transition = "linear 0.6s";
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.paddingTop = "0.35cm";
+                            }, "0");
+                            setTimeout(() => {
+                                menuid.style.maxHeight = "1.55cm";
+                                menuid.style.height = "8.5vw";
+                            }, "200");
+                            setTimeout(() => {
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.transition = "ease 0.9s";
+                                menuimgid.style.transition = null;
+                                menulogoid.style.left = "4%";
+                                aoneid.style.display = "initial";
+                                atwoid.style.display = "initial";
+                                menuelementsid.style.display = "initial";
+                            }, "900");
+                            setTimeout(() => {
+                                fivemenu_.style.opacity = "1";
+                            }, "1000");
+                            setTimeout(() => {
+                                fourmenu_.style.opacity = "1";
+                            }, "1100");
+                            setTimeout(() => {
+                                threemenu_.style.opacity = "1";
+                            }, "1200");
+                            setTimeout(() => {
+                                twomenu_.style.opacity = "1";
+                            }, "1300");
+                            setTimeout(() => {
+                                onemenu_.style.opacity = "1";
+                            }, "1400");
+                            setTimeout(() => {
+                                aoneid.style.opacity = "1";
+                            }, "1050");
+                            setTimeout(() => {
+                                atwoid.style.opacity = "1";
+                            }, "1250");
+                        }
+                    }
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimglinkid.style.left = "0px";
+                            menuid.style.transition = "ease 0.4s";
+                            menuimgid.style.transition = "ease 0.6s";
+                            menulogoid.style.transition = "linear 0.6s";
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.paddingTop = "0.35cm";
+                        }
+                    }, "1100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuid.style.maxHeight = "1.55cm";
+                            menuid.style.height = "8.5vw";
+                        }
+                    }, "1300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.transition = "ease 0.9s";
+                            menuimgid.style.transition = null;
+                            menulogoid.style.left = "4%";
+                            aoneid.style.display = "initial";
+                            atwoid.style.display = "initial";
+                            menuelementsid.style.display = "initial";
+                        }
+                    }, "2000");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fivemenu_.style.opacity = "1";
+                        }
+                    }, "2100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fourmenu_.style.opacity = "1";
+                        }
+                    }, "2200");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            threemenu_.style.opacity = "1";
+                        }
+                    }, "2300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            twomenu_.style.opacity = "1";
+                        }
+                    }, "2400");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            onemenu_.style.opacity = "1";
+                        }
+                    }, "2500");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            aoneid.style.opacity = "1";
+                            preAnimationtop = false;
+                        }
+                    }, "2150");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            atwoid.style.opacity = "1";
+                        }
+                    }, "2350");
+                </script>
+            </div>
+            <div class="mainContent" id="mainContent_">
+                <div style="height: 69vh; overflow: hidden; max-height: 56.25vw;">
+                    <video autoplay muted loop src="INTRBACVID.mp4" class="vidmob" id="vidmob_"></video>
+                </div>
+                <script>
+                    var vidmobid = document.getElementById("vidmob_")
+                    setTimeout(() => {
+                        vidmobid.style.transition = "ease 0.5s";
+                    }, "1500");
+                    setTimeout(() => {
+                        vidmobid.style.opacity = "1";
+                        vidmobid.style.filter = "blur(0px)";
+                    }, "1600");
+                    setTimeout(() => {
+                        vidmobid.style.transition = "ease 0.5s";
+                    }, "11600");
+                </script>
+                <script>
+                    function ChangeViewport(){
+                        let wdth = window.outerWidth;
+                        if (wdth <= 680) {
+                            window.location.replace("https://m.collegiatecrash.com");
+                        }
+                    }
+                </script>
+                <div style="position: absolute; top: 0px; text-align: center; width: 100vw; height: 69vh; max-height: 56.25vw;" class="mainContentText">
+                    <h1 style="margin-top: min(28vh, 24vw);">Welcome to Collegiate Crash</h1>
+                    <h2>We are currently updating this section. You may <a href="https://www.collegiatecrash.com/support/" style="text-decoration: none; color: lightgrey;">click here</a> for if you still may need help.</h2>
+                </div>
+                <div style="text-align: left; margin-left: 3vw;">
+                    <h1 style="margin-left: 0.3em; font-size: 4em; margin-top: 10vh;">Who are we?</h1>
+                    <h2 style="color: lightgrey; line-height: 1.5em; margin-right: 50vw;">We at Collegiate Crash are trying to provide a platform to elavate collegiate athletics on a global scale in a step by step manner. With our premiere selection of sports and e-sports given current relevance, popularity and a host of other variables is where we primarily intend to focus our resources to create competitive infrastructures. As methods to develop these infrastructures of our respective selection of sports and e-sports, a few ways we do so is through hosting events such as but not limited to tournaments, scrims, leagues etc. We do have plans to introduce additional sports and e-sports as we progress.</h2>
+                </div>
+            </div>
+            <div style="width: 100vw; overflow: hidden;">
+                <div style="margin-bottom: 0px; display: flex; flex-direction: row; background-color: #181818; width: 300vw; display: none;">
+                    <div class="warncompetenowbar" style="margin-left: -50vw;"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                <div>
+            </div>
+                <script>
                     var onload_ = document.getElementById("preloadpg");
-                    onload_.style.transition = "opacity 700ms"
+                    onload_.style.transition = "ease 700ms";
                     window.addEventListener("load", function(){
                         setTimeout(function(){
                             onload_.style.opacity='0';
@@ -78,7 +294,7 @@
             </div>
             <div class="notice">
                 <h1 id="n1">Notice: This site is currently under maintenance</h1>
-                <p id="n2">The site may not work as intended for this while, feel free to explore our socials for the time being. Your patience is appreciated.</p>
+                <p id="n2">The site may not work as intended for this while, feel free to explore <a href="https://www.collegiatecrash.com/socials/" style="text-decoration: none; color: #2e2e2e;">our socials</a> for the time being. Your patience is appreciated.</p>
             </div>
             <script>
                 var hone = document.getElementById('n1');
