@@ -1,1 +1,75 @@
-
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #111111;
+}
+.menu{
+    height: 17vw;
+    max-height: 3.1cm;
+    background-color: #191919;
+}
+::selection{
+    background-color: #242424;
+    color: white;
+}
+.menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
+    position: absolute;
+    padding-top: min(0.6cm, 3vw);
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+mark {
+    background-color: #191919;
+    color: #424242;
+}
+.mainContent{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding-top: max(calc(50vh - 24.2vw), 3.2cm);
+    align-items: center;
+}
+.mainContent h1{
+    font-size: 4em;
+    color: white;
+    margin-bottom: 0px;
+}
+.mainContent h2{
+    font-size: 1.4vw;
+    color: #424242;
+    margin-top: 1em;
+    font-weight: normal;
+    line-height: 2.1vw;
+    text-align: center;
+}
