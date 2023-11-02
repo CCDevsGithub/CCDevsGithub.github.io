@@ -128,16 +128,28 @@ mark {
     margin-top: calc((56.25vw/4) - 2em - 42px - 1em);
     color: #111111;
 }
+.mainframestreamwrapper{
+    height: 100%; 
+    width: 100%;
+    margin-top: 0px; 
+    margin-left: 0px;
+}
+.bordervid{
+    display: none;
+}
 @media (min-aspect-ratio: 23/20) {
     .mainframestream{
         height: calc(100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em);
-        width: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777);
+        width: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px);
         min-width: 35vw;
         min-height: calc(35vw/1.7777);
-        background-color: #6441a5;
+        background-image: url(CrshEmbedPlayerBackground.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: #f5d81b;
     }
     .maininfo{
-        width: calc(100vw - (100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777);
+        width: calc(100vw - (100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 + 30px);
         height: calc(100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em);
     }
     .maininfo h2{
@@ -147,5 +159,21 @@ mark {
     .mainContent{
         display: flex;
         flex-direction: row;
+    }
+    .mainframestreamwrapper{
+        height: calc(100% - 40px); 
+        width: calc(100% - 41.11px); 
+        margin-top: 20px; 
+        margin-left: 20px;
+    }
+}
+@media (min-aspect-ratio: 24.5/20) {
+    .bordervid{
+        display: block;
+    }
+}
+@media (min-aspect-ratio: 60.5/20) {
+    .bordervid{
+        display: none;
     }
 }
