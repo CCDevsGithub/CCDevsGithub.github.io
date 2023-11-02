@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="guides.css">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
+    </head>
+    <title>Guides | Collegiate Crash: How can we help you today?</title>
+    <body>
+        <div class="onloadpg">
+            <div class="menu">
+                <div class="menulogo">
+                    <a href="https://www.collegiatecrash.com" class="menuimglink"><embed src ="https://www.collegiatecrash.com/Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
+                </div>
+            </div>
+            <div class="mainContent">
+                <h1>List of Guides:</h1>
+                <h2>Current count of available guide(s): 1</h2>
+                <div class="ListOG">
+                    <div class="EntryGuide">
+                        <button onclick="window.location.href='https://www.collegiatecrash.com/support/guides/getting_started_on_discord';"></button>
+                        <img src="img1disstart.png">
+                        <h1>Getting Started On Discord</h1>
+                        <h2>Description: Short guide to get you accustomed to our discord server(s) in order to create a better experience for you.</h2>
+                    </div>
+                </div>
+            </div>
+                <script>
+                    var onload_ = document.getElementById("preloadpg");
+                    onload_.style.transition = "opacity 700ms"
+                    window.addEventListener("load", function(){
+                        setTimeout(function(){
+                            onload_.style.opacity='0';
+                        }, 400)
+                        setTimeout(function(){
+                            onload_.style.display="none";
+                        }, 1100)
+                    })
+                    const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
+                    const region_header = ['注意:このサイトは現在メンテナンス中です',
+                    '알림: 이 사이트는 현재 유지 관리 중입니다',
+                    'Perhatikan: Situs ini sedang dalam pemeliharaan']
+                    const region_footer = ['サイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、ソーシャルメディアプラットフォームを自由に探索してください. あなたの忍耐は高く評価されます。',
+                    '이 사이트는 당분간 의도한 대로 작동하지 않을 수 있습니다. 당분간은 소셜 미디어 플랫폼을 자유롭게 탐색하십시오.양해해 주셔서 감사해요.',
+                    'Situs ini mungkin tidak berfungsi sebagaimana dimaksud untuk saat ini, jangan ragu untuk menjelajahi sosial kami untuk saat ini. Kesabaran Anda dihargai.']
+                    let user_region = '';
+                    let region_index = -1;
+                    fetch('http://ip-api.com/json/?fields=61439')
+                        .then(res => res.json())
+                        .then(res => {
+                            user_region = res.countryCode;
+                            let len = region_codes.length;
+                            for (let x=0; x<len;x++){
+                                if (region_codes[x] == user_region){
+                                    region_index = x;
+                                }
+                            }
+                            if(region_index != -1){
+                                let ht = document.getElementById("n1");
+                                let ft = document.getElementById("n2");
+                                if (region_index < 3){
+                                    ht.textContent = region_header[region_index]
+                                    ft.textContent = region_footer[region_index]
+                                }
+                            }
+                        })
+                    
+                </script>
+            </div>
+            <div class="notice">
+                <h1 id="n1">Notice: This site is currently under maintenance</h1>
+                <p id="n2">The site may not work as intended for this while, feel free to explore <a href="https://www.collegiatecrash.com/socials/" style="text-decoration: none; color: #2e2e2e;">our socials</a> for the time being. Your patience is appreciated.</p>
+            </div>
+            <script>
+                var hone = document.getElementById('n1');
+                var htwo = document.getElementById('n2');
+                hone.style.transition = 'all 700ms';
+            </script>
+        </div>
+    </body>
+</html>
