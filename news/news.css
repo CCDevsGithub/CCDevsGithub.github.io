@@ -73,3 +73,29 @@ mark {
     line-height: 2.1vw;
     text-align: center;
 }
+
+#preloadpg{
+    width: 100vw;
+    height: 100vh;
+    background: #111111;
+    position: fixed;
+    z-index: 100;
+}
+.preloadcnt{
+    width: max(40vmin, 3.5cm);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: smaller;
+    color: #2e2e2e;
+    text-align: center;
+    line-height: 150%;
+}
+.preloadlgo{
+    width: max(25vmin, 2cm);
+    transform: translate(-50%, 0%);
+    margin-left: 50%;
+    padding-bottom: 10px;
+}
