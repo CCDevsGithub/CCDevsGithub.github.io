@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="watch_now.css">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
+    </head>
+    <title>見る | コリージアト クラッシュ</title>
+    <body>
+        <div class="onloadpg" style="overflow-x: hidden;">
+            <div class="menu">
+                <div class="menulogo" id="menulogo_">
+                    <a href="https://www.collegiatecrash.com/rg-jp/" class="menuimglink"><embed src ="https://www.collegiatecrash.com/Crsh.svg" class="menuimg" style="filter: invert(80%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
+                </div>
+                <div style="position: relative;">
+                    <h1 id="hone_">| 私たちはまだライブではありません、今後のストリームのスケジュールをチェックしてください。</h1>
+                </div>
+            </div>
+            <div class="schedule">
+                <h1>次に来る:</h1>
+                <div style="position: absolute; width: 100vw; height: min(3.0cm, 12vh); top: 0.8cm; min-height: 2cm; overflow: hidden;">
+                    <h2>今のところ予定はありません</h2>
+                </div>
+                <script>
+                    var menulogoid = document.getElementById("menulogo_");
+                    var h2id = document.getElementById("hone_");
+                    var tempwidth = (h2id.clientWidth + 1)
+                    menulogoid.style.transition = "ease 1.3s";
+                    h2id.style.transition = "ease-out 2s";
+                    setTimeout(() => {
+                        menulogoid.style.left = "calc(50% - 268px - 0.3cm)";
+                    }, "1000");
+                    setTimeout(() => {
+                        h2id.style.opacity = "1";
+                    }, "1500");
+                </script>
+            </div>
+            <div class="mainContent">
+                <div class="mainframestream">
+                    <div class="mainframestreamwrapper">
+                        <iframe style="z-index: 3;" src="https://player.twitch.tv/?channel=collegiatecrash&parent=www.collegiatecrash.com" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%"></iframe>
+                        <div class="bordervid">
+                            <span style="width: 5px; height: 4vh; background-color:#424242; display: block; top: calc(0.8cm + max(min(3.0cm, 12vh), 2cm) + 20px); left: 20px; position: absolute;"></span>
+                            <span style="width: 3vw; height: 5px; background-color:#424242; display: block; top: calc(0.8cm + max(min(3.0cm, 12vh), 2cm) + 20px); left: 20px; position: absolute;"></span>
+                            <span style="width: 5px; height: 4vh; background-color:#424242; display: block; top: calc(0.8cm + max(min(3.0cm, 12vh), 2cm) + 20px); left: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px - 26.11px); position: absolute;"></span>
+                            <span style="width: 3vw; height: 5px; background-color:#424242; display: block; top: calc(0.8cm + max(min(3.0cm, 12vh), 2cm) + 20px); left: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px - 26.11px - 3vw); position: absolute;"></span>
+                            <span style="width: 5px; height: 4vh; background-color:#424242; display: block; bottom: calc(20px + 3em + 37px); left: 20px; position: absolute;"></span>
+                            <span style="width: 3vw; height: 5px; background-color:#424242; display: block; bottom: calc(20px + 3em + 37px); left: 20px; position: absolute;"></span>
+                            <span style="width: 5px; height: 4vh; background-color:#424242; display: block; bottom: calc(20px + 3em + 37px); left: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px - 26.11px); position: absolute;"></span>
+                            <span style="width: 3vw; height: 5px; background-color:#424242; display: block; bottom: calc(20px + 3em + 37px); left: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px - 26.11px - 3vw); position: absolute;"></span>     
+                        </div>
+                    </div>
+                </div>
+                <div class="maininfo">
+                    <h1 style="margin-left: 1em; margin-right: 1em;">現在のリーダーボード:</h1>
+                    <h2 style="margin-left: 1.5em; margin-right: 1.5em;">現在表示できる統計情報はないようです。</h2>
+                </div>
+            </div>
+            <div class="notice" id="notice_">
+                <h1 id="n1">注意:このサイトは現在メンテナンス中です</h1>
+                <p id="n2">Tサイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、<a href="https://www.collegiatecrash.com/rg-jp/socials/" style="text-decoration: none; color: #2e2e2e;">ソーシャルメディアプラットフォーム</a>を自由に探索してください. あなたの忍耐は高く評価されます。</p>
+            </div>
+            <script>
+                var hone = document.getElementById('n1');
+                var htwo = document.getElementById('n2');
+                hone.style.transition = 'all 700ms';
+            </script>
+        </div>
+    </body>
+</html>

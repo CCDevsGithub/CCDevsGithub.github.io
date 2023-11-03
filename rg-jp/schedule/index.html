@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="schedule.css">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
+    </head>
+    <title>スケジュール | コリージアト クラッシュ</title>
+    <body>
+        <div id="preloadpg">
+            <div class="preloadcnt">
+                <embed src ="https://www.collegiatecrash.com/Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+                <p><mark>コリージアト クラッシュチームに参加してくれるボランティアを募集しています！ お問い合わせ・お申し込みは、apply@collegiatecrash.comまでご連絡ください。</p>
+            </div>
+        </div>
+        <div class="onloadpg">
+            <div class="menu">
+                <div class="menulogo">
+                    <a href="https://www.collegiatecrash.com/rg-jp/" class="menuimglink"><embed src ="https://www.collegiatecrash.com/Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
+                </div>
+            </div>
+            <div class="mainContent">
+                <img src="ClearScheduleIcon.svg" style="width: 20vw; filter: invert(0.2); margin-left: 40vw;">
+                <h2>スケジュールには何もありません。</br> 私たちの<a href="https://www.collegiatecrash.com/rg-jp/join" style="text-decoration: none; color: #969696;">スクリム</a>でプレーしてください</h2>
+            </div>
+            <div class="notice" id="notice_">
+                <h1 id="n1">注意:このサイトは現在メンテナンス中です</h1>
+                <p id="n2">Tサイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、<a href="https://www.collegiatecrash.com/rg-jp/socials/" style="text-decoration: none; color: #2e2e2e;">ソーシャルメディアプラットフォーム</a>を自由に探索してください. あなたの忍耐は高く評価されます。</p>
+            </div>
+            <script>
+                var onload_ = document.getElementById("preloadpg");
+                onload_.style.transition = "opacity 700ms"
+                window.addEventListener("load", function(){
+                    setTimeout(function(){
+                        onload_.style.opacity='0';
+                    }, 400)
+                    setTimeout(function(){
+                        onload_.style.display="none";
+                    }, 1100)
+                })
+                var hone = document.getElementById('n1');
+                var htwo = document.getElementById('n2');
+                hone.style.transition = 'all 700ms';
+            </script>
+        </div>
+    </body>
+</html>
