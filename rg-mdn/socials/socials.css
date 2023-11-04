@@ -1,0 +1,135 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #111111;
+}
+.menu{
+    height: 17vw;
+    max-height: 3.1cm;
+    background-color: #191919;
+}
+::selection{
+    background-color: #242424;
+    color: red;
+}
+.menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
+    position: absolute;
+    padding-top: min(0.6cm, 3vw);
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.socialbtns{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+.socials{
+    max-width: min(17cm,100vw);
+    max-height: min(17cm,70vh);
+    width: 100vw;
+    height: 100vw;
+    margin-left: min(0cm,50vh);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 4%);
+}
+.gridbtndiv{
+    height: min(8cm, 50vw);
+}
+.gridbtn1{
+    margin-top: 6%;
+    margin-left: 6%;
+    width: 92%;
+    height: 92%;
+    border-radius: 20px;
+    border: none;
+    background-color: #212121;
+}
+.gridbtn2{
+    margin-top: 6%;
+    margin-left: 2%;
+    width: 92%;
+    height: 92%;
+    border-radius: 20px;
+    border: none;
+    background-color: #212121;
+}
+.gridbtn3{
+    margin-top: 4%;
+    margin-left: 6%;
+    width: 92%;
+    height: 92%;
+    border-radius: 20px;
+    border: none;
+    background-color: #212121;
+}
+.gridbtn4{
+    margin-top: 4%;
+    margin-left: 2%;
+    width: 92%;
+    height: 92%;
+    border-radius: 20px;
+    border: none;
+    background-color: #212121;
+}
+#preloadpg{
+    width: 100vw;
+    height: 100vh;
+    background: #111111;
+    position: fixed;
+    z-index: 100;
+}
+.preloadcnt{
+    width: max(40vmin, 3.5cm);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: smaller;
+    color: #2e2e2e;
+    text-align: center;
+    line-height: 150%;
+}
+.preloadlgo{
+    width: max(25vmin, 2cm);
+    transform: translate(-50%, 0%);
+    margin-left: 50%;
+    padding-bottom: 10px;
+}
+mark {
+    background-color: #191919;
+    color: #424242;
+}

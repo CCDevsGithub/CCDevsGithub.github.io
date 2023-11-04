@@ -1,0 +1,307 @@
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q42S3H2VKD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config','G-Q42S3H2VKD');
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="home.css">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
+    </head>
+    <title>Collegiate Crash: Your home for the collegiate competitive experience</title>
+    <body onscroll="TriggerMenuTopAnimation()" onresize="ChangeViewport()" style="width: 100vw; overflow-x: hidden;">
+        <div class="onloadpg">
+            <div class="menu" id="menu_">
+                <div class="menulogo" id="menulogo_">
+                    <a href="https://www.collegiatecrash.com" class="menuimglink" id="menuimglink_"><embed src ="Crsh.svg" class="menuimg" id="menuimg_" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
+                </div>
+                <div class="menuelements" id="menuelements_">
+                    <a href="https://www.collegiatecrash.com/rg-mdn/news/" class="select" id="menu_1" style="padding-left: 8px;">新闻</a>
+                    <a href="https://www.collegiatecrash.com/rg-mdn/schedule/" class="select" id="2menu_">日程</a>
+                    <a href="https://www.collegiatecrash.com/rg-mdn/support/" class="select" id="3menu_">支持</a>
+                    <a href="https://www.collegiatecrash.com/rg-mdn/socials/" class="select" id="4menu_">社交媒体</a>
+                    <a href="https://www.collegiatecrash.com/rg-mdn/watch_now/" class="select" id="5menu_">观看</a>
+                </div>
+                <div class="additionalButtonsMenu">
+                    <a href="https://www.collegiatecrash.com/rg-mdn/join/" class="a1_" id="a1__">
+                        <div class="additionalButtonsMenu1_">
+                            <h2 style="margin: 0px;"><span>现在玩</span></h2>
+                        </div>
+                    </a>
+                    <div href="#RegionLanguageChange_" class="a2_" id="a2__">
+                        <div id="additionalButtonsMenu2__" class="additionalButtonsMenu2_">
+                            <p id="RegionButtonText" style="font-size: 10px; font-family: Arial, sans-serif; font-weight: bold; color: #e6e6e6; margin: 0px; position: absolute; padding-bottom: 16%; right: 18%; transform: rotate(180deg);">Δ</p>
+                            <img src="GlobeIcon.svg" id="RegionButtonIcon" style="height: 75%; filter: invert(0.9); display:inline; padding-top: 5%; margin-left: -20%;">
+                            <select id="selectRegionDropDown" onclick="RegionLanguageChangeDrop()" onchange="RegionChange()" style="position: absolute; top: 0px; left: 0px; height: 5.1vw; max-height: 0.93cm; width: 70px; opacity: 0%; background-color: #191919; color:#8a8a8a;">
+                                <optgroup label="------------------------------------" id="topchoiceregiondisplay">
+                                    <option value="DEF" selected disabled id="defselectdisplayregion">中文</option>
+                                </optgroup>
+                                <optgroup label="------------------------------------">
+                                    <option value="English">English (英语)</option>
+                                    <option value="Japanese">日本語 (日语)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="RegionLanguageChange_">
+                </div>
+                <script>
+                    function RegionChange(){
+                        var regionselectdrop = document.getElementById('selectRegionDropDown').value;
+                        if (regionselectdrop == "English"){
+                            window.location.replace("https://www.collegiatecrash.com");
+                        }
+                        var regionselectdrop = document.getElementById('selectRegionDropDown').value;
+                        if (regionselectdrop == "Japanese"){
+                            window.location.replace("https://www.collegiatecrash.com/rg-jp/");
+                        }
+                    }
+                    function onMobileView(){
+                        if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
+                            window.location.replace("https://m.collegiatecrash.com/rg-mdn/");
+                        }
+                    }
+                    console.log(onMobileView())
+                    function RegionLanguageChangeDrop(){
+                        var RegionButtonTextid = document.getElementById("RegionButtonText");
+                        var RegionButtonIcon = document.getElementById("RegionButtonIcon");
+                        var atwoid = document.getElementById("a2__");
+                        var additionalButtonsMenu2__id = document.getElementById("additionalButtonsMenu2__");
+                        if (additionalButtonsMenu2__id.style.backgroundColor != "rgb(233, 233, 233)"){
+                            atwoid.disabled = true;
+                            RegionButtonTextid.style.transition = "ease 0.4s";
+                            RegionButtonIcon.style.transition = "ease 0.4s";
+                            RegionButtonTextid.style.transform = "rotate(0deg)";
+                            RegionButtonTextid.style.paddingBottom = "0%";
+                            RegionButtonTextid.style.paddingTop = "16%";
+                            RegionButtonTextid.style.color = "black";
+                            RegionButtonIcon.style.filter = "invert(0.1)"
+                            additionalButtonsMenu2__id.style.backgroundColor = "rgb(233, 233, 233)";
+                            setTimeout(() => {
+                                atwoid.disabled = false;
+                            }, "500");
+                        } else {
+                            atwoid.disabled = true;
+                            RegionButtonTextid.style.transform = "rotate(-180deg)";
+                            RegionButtonTextid.style.paddingTop = "0%";
+                            RegionButtonTextid.style.paddingBottom = "16%";
+                            RegionButtonTextid.style.color = "white";
+                            RegionButtonIcon.style.filter = "invert(0.9)"
+                            additionalButtonsMenu2__id.style.backgroundColor = "#2e2e2e";
+                            setTimeout(() => {
+                                atwoid.disabled = false;
+                                RegionButtonTextid.style.transition = null;
+                                RegionButtonIcon.style.transition = null;
+                                RegionButtonTextid.style.transform = "rotate(180deg)";
+                            }, "500");
+                        }
+                    }
+                    var runTrigger = false;
+                    var preAnimationtop = true;
+                    var menulogoid = document.getElementById("menulogo_");
+                    var menuimgid = document.getElementById("menuimg_");
+                    var menuid = document.getElementById("menu_");
+                    var menuimglinkid = document.getElementById("menuimglink_");
+                    var onemenu_ = document.getElementById("menu_1");
+                    var twomenu_ = document.getElementById("2menu_");
+                    var threemenu_ = document.getElementById("3menu_");
+                    var fourmenu_ = document.getElementById("4menu_");
+                    var fivemenu_ = document.getElementById("5menu_");
+                    var aoneid = document.getElementById("a1__");
+                    var atwoid = document.getElementById("a2__");
+                    var menuelementsid = document.getElementById("menuelements_")
+                    function TriggerMenuTopAnimation(){
+                        runTrigger = true;
+                        if(preAnimationtop == true){
+                            setTimeout(() => {
+                                menuimglinkid.style.left = "0px";
+                                menuid.style.transition = "ease 0.4s";
+                                menuimgid.style.transition = "ease 0.6s";
+                                menulogoid.style.transition = "linear 0.6s";
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.paddingTop = "0.35cm";
+                            }, "0");
+                            setTimeout(() => {
+                                menuid.style.maxHeight = "1.55cm";
+                                menuid.style.height = "8.5vw";
+                            }, "200");
+                            setTimeout(() => {
+                                menuimgid.style.height = "0.8cm";
+                                menulogoid.style.transition = "ease 0.9s";
+                                menuimgid.style.transition = null;
+                                menulogoid.style.left = "4%";
+                                aoneid.style.display = "initial";
+                                atwoid.style.display = "initial";
+                                menuelementsid.style.display = "initial";
+                            }, "900");
+                            setTimeout(() => {
+                                fivemenu_.style.opacity = "1";
+                            }, "1000");
+                            setTimeout(() => {
+                                fourmenu_.style.opacity = "1";
+                            }, "1100");
+                            setTimeout(() => {
+                                threemenu_.style.opacity = "1";
+                            }, "1200");
+                            setTimeout(() => {
+                                twomenu_.style.opacity = "1";
+                            }, "1300");
+                            setTimeout(() => {
+                                onemenu_.style.opacity = "1";
+                            }, "1400");
+                            setTimeout(() => {
+                                aoneid.style.opacity = "1";
+                            }, "1050");
+                            setTimeout(() => {
+                                atwoid.style.opacity = "1";
+                            }, "1250");
+                        }
+                    }
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimglinkid.style.left = "0px";
+                            menuid.style.transition = "ease 0.4s";
+                            menuimgid.style.transition = "ease 0.6s";
+                            menulogoid.style.transition = "linear 0.6s";
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.paddingTop = "0.35cm";
+                        }
+                    }, "1100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuid.style.maxHeight = "1.55cm";
+                            menuid.style.height = "8.5vw";
+                        }
+                    }, "1300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            menuimgid.style.height = "0.8cm";
+                            menulogoid.style.transition = "ease 0.9s";
+                            menuimgid.style.transition = null;
+                            menulogoid.style.left = "4%";
+                            aoneid.style.display = "initial";
+                            atwoid.style.display = "initial";
+                            menuelementsid.style.display = "initial";
+                        }
+                    }, "2000");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fivemenu_.style.opacity = "1";
+                        }
+                    }, "2100");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            fourmenu_.style.opacity = "1";
+                        }
+                    }, "2200");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            threemenu_.style.opacity = "1";
+                        }
+                    }, "2300");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            twomenu_.style.opacity = "1";
+                        }
+                    }, "2400");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            onemenu_.style.opacity = "1";
+                        }
+                    }, "2500");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            aoneid.style.opacity = "1";
+                            preAnimationtop = false;
+                        }
+                    }, "2150");
+                    setTimeout(() => {
+                        if(runTrigger == false){
+                            atwoid.style.opacity = "1";
+                        }
+                    }, "2350");
+                </script>
+            </div>
+            <div class="mainContent" id="mainContent_">
+                <div style="height: 69vh; overflow: hidden; max-height: 56.25vw;">
+                    <video autoplay muted loop src="INTRBACVID.mp4" class="vidmob" id="vidmob_"></video>
+                </div>
+                <script>
+                    var vidmobid = document.getElementById("vidmob_")
+                    setTimeout(() => {
+                        vidmobid.style.transition = "ease 0.5s";
+                    }, "1500");
+                    setTimeout(() => {
+                        vidmobid.style.opacity = "1";
+                        vidmobid.style.filter = "blur(0px)";
+                    }, "1600");
+                    setTimeout(() => {
+                        vidmobid.style.transition = "ease 0.5s";
+                    }, "11600");
+                </script>
+                <script>
+                    function ChangeViewport(){
+                        let wdth = window.outerWidth;
+                        if (wdth <= 680) {
+                            window.location.replace("https://m.collegiatecrash.com");
+                        }
+                    }
+                </script>
+                <div style="position: absolute; top: 0px; text-align: center; width: 100vw; height: 69vh; max-height: 56.25vw;" class="mainContentText">
+                    <h1 style="margin-top: min(28vh, 24vw);" id="mainTitle">欢迎来到Collegiate Crash</h1>
+                    <h2>我们目前正在更新此部分。如果您需要任何帮助，请<a href="https://www.collegiatecrash.com/rg-mdn/support/" style="text-decoration: none; color: lightgrey;">点击这里。</a></h2>
+                </div>
+                <div style="text-align: left; margin-left: 3vw;">
+                    <h1 style="margin-left: 0.3em; font-size: 4em; margin-top: 10vh;">我们是谁？</h1>
+                    <h2 style="color: lightgrey; line-height: 1.5em; margin-right: 50vw;">我们 Collegiate Crash 试图提供一个平台，在全球范围内逐步推广大学生体育运动。考虑到体育和电子竞技当前的相关性、受欢迎程度和许多其他变量，我们精心选择了体育和电子竞技作为我们主要打算将资源集中用于创建竞争性基础设施的领域。作为开发我们各自选择的体育和电子竞技基础设施的方法，我们的一些方法是通过举办赛事，例如但不限于锦标赛、训练赛、联赛等。随着我们的进步，我们确实计划引入更多的体育运动和电子竞技。</br></br><span>We at Collegiate Crash are trying to provide a platform to elevate collegiate athletics on a global scale in a step by step manner. With our premiere selection of sports and e-sports given current relevance, popularity and a host of other variables is where we primarily intend to focus our resources to create competitive infrastructures. As methods to develop these infrastructures of our respective selection of sports and e-sports, a few ways we do so is through hosting events such as but not limited to tournaments, scrims, leagues etc. We do have plans to introduce additional sports and e-sports as we progress.</span></h2>
+                </div>
+            </div>
+            <div style="width: 100vw; overflow: hidden;">
+                <div style="margin-bottom: 0px; display: flex; flex-direction: row; background-color: #181818; width: 300vw; display: none;">
+                    <div class="warncompetenowbar" style="margin-left: -50vw;"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                    <div class="warncompetenowbar"></div>
+                <div>
+            </div>
+                <script>
+                    var onload_ = document.getElementById("preloadpg");
+                    onload_.style.transition = "ease 700ms";
+                    window.addEventListener("load", function(){
+                        setTimeout(function(){
+                            onload_.style.opacity='0';
+                        }, 400)
+                        setTimeout(function(){
+                            onload_.style.display="none";
+                        }, 1100)
+                    })
+                </script>
+            </div>
+            <div class="LangNotice">
+            </div>
+            <div class="notice">
+                <h1 id="n1">通知：本站目前正在维护中</h1>
+                <p id="n2">该网站目前可能无法按预期运行，现在请随意探索我们的<a href="https://www.collegiatecrash.com/rg-mdn/socials/" style="text-decoration: none; color: #2e2e2e;">社交媒体</a>。感谢您的耐心等待。</p>
+            </div>
+            <script>
+                var hone = document.getElementById('n1');
+                var htwo = document.getElementById('n2');
+                hone.style.transition = 'all 700ms';
+            </script>
+        </div>
+    </body>
+</html>

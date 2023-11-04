@@ -1,0 +1,228 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #111111;
+}
+.menu{
+    height: 17vw;
+    max-height: 3.1cm;
+    background-color: #191919;
+}
+::selection{
+    background-color: #242424;
+    color: red;
+}
+.menuimg{
+    height: 10vw;
+    max-height: 2cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.menulogo{
+    position: absolute;
+    padding-top: min(0.6cm, 3vw);
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.selectjoinregion{
+    max-width: max(70vmin,7cm);
+    min-height: max(12cm,80vh);
+    width: 100vw;
+    height: 80vh;
+    margin-left: min(0cm,50vh);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 2%);
+}
+.selectjoinregion h1{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #424242;
+    font-size: max(6vmin, 0.5cm);
+    line-height: 150%;
+    margin: 0;
+}
+
+#regiontext{
+    animation-duration: 0.5s;
+    animation-name: slidein;
+}
+
+.selectjoinregion h1 span{
+    color: #f7f7f7;
+}
+
+#rgndisplaytextspn{
+    animation-duration: 0.8s;
+    animation-name: slidein;
+}
+
+.buttom{
+    position: absolute;
+    background-color: #191919;
+    width: 100vw;
+    max-width: max(70vmin,7cm);
+    height: max(9.5vmin, 1cm);
+    top: max(27vmin, 2.1cm);
+    left: -15px;
+    mix-blend-mode: overlay;
+    border-radius: 5px;
+}
+
+#selectRegionDropDown{
+    background-color: #191919;
+    color:#8a8a8a;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    opacity: 0%;
+}
+
+.continuebutton{
+    position: relative;
+    width: 100vw;
+    height: calc(55vh - 55vw);
+    min-height: 1.5cm;
+    background-color: #424242;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    top: 0px;
+    animation-duration: 0.8s;
+    animation-name: slideup;
+}
+
+.continuebutton:before{
+    position: relative;
+    width: 100vw;
+    height: calc(55vh - 55vw);
+    min-height: 1.5cm;
+    background-color: #424242;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    top: 0px;
+}
+
+.continuebutton:before:hover{
+    position: relative;
+    width: 100vw;
+    height: calc(55vh - 55vw);
+    min-height: 1.5cm;
+    background-color: #424242;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    top: 0px;
+}
+
+.continuebutton h1{
+    animation-duration: 2s;
+    animation-name: fadein;
+    position: absolute;
+    right: 10vh;
+    margin-top: 0.35cm;
+    padding-top: calc((50vh - 57vw)/2);
+    pointer-events: none;
+    color: #191919;
+}
+
+.btndiscord{
+    position: absolute;
+    width: 100vw;
+    height: calc(55vh - 55vw);
+    min-height: 1.5cm;
+    border: none;
+    animation-duration: 0.8s;
+    animation-name: slideup;
+    opacity: 0%;
+    cursor: pointer;
+}
+@keyframes slidein {
+    from {
+        opacity: 30%;
+        margin-left: 5%;
+    }
+    to {
+        opacity: 100%;
+        margin-left: 0%;
+    }
+}
+
+@keyframes slideup {
+    from {
+        height: 0px;
+        min-height: 0px;
+    }
+    to {
+        height: calc(55vh - 55vw);
+        min-height: 1.5cm;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+#preloadpg{
+    width: 100vw;
+    height: 100vh;
+    background: #111111;
+    position: fixed;
+    z-index: 100;
+}
+.preloadcnt{
+    width: max(40vmin, 3.5cm);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: smaller;
+    color: #2e2e2e;
+    text-align: center;
+    line-height: 150%;
+}
+.preloadlgo{
+    width: max(25vmin, 2cm);
+    transform: translate(-50%, 0%);
+    margin-left: 50%;
+    padding-bottom: 10px;
+}
+
+mark {
+    background-color: #191919;
+    color: #424242;
+}

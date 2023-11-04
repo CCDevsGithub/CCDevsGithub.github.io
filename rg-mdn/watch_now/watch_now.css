@@ -1,0 +1,182 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #242424;
+    overflow-x: hidden;
+}
+.menu{
+    height: 0.8cm;
+    background-color: #424242;
+    overflow: hidden;
+}
+.menu h1{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0px;
+    margin-top: 0.2cm;
+    color: #cccccc;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    pointer-events: none;
+    min-width: 378px;
+}
+::selection{
+    background-color: #242424;
+    color: white;
+}
+.menuimg{
+    height: 0.5cm;
+}
+.menuimglink{
+    height: 10vw;
+    max-height: 2cm;
+    font-size: 10vw;
+}
+.schedule{
+    width: 100vw;
+    height: min(3.0cm, 12vh);
+    min-height: 2cm;
+    background-color: #313131;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+}
+.schedule h1{
+    font-size: max(1.85vh, 0.8em);
+    margin: 0px;
+    margin-left: 1em;
+    padding-top: 0.4em;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #ececec;
+    text-decoration: underline;
+}
+.schedule h2{
+    font-size: max(6vw,75px);
+    margin: 0px;
+    width: 200vw;
+    left: min(3vw, 0.7cm);
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: min(max(6vw,75px),3cm);
+    position: absolute;
+    bottom: min(calc(-2.4vw + 1vh), -4px);
+    background: -webkit-linear-gradient(#3c3c3c,#424242);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+}
+.menulogo{
+    position: absolute;
+    padding-top: 0.14cm;
+    left: 50%;
+    transform: translate(-55%, 0%);
+    height: 10vw;
+    max-height: 2cm;
+}
+.notice{
+    position: fixed;
+    width: 100vw;
+    background-color: #edaa00;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    bottom: 0px;
+}
+.notice p{
+    font-size: 1em;
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 10vw;
+    padding-bottom: 25px;
+}
+.notice h1{
+    margin: 0px;
+    padding-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+mark {
+    background-color: #191919;
+    color: #424242;
+}
+.mainContent{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.mainframestream{
+    width: 100vw;
+    height: 56.25vw;
+    background-color: #f5d81b;
+    background-image: url(CrshEmbedPlayerBackground.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.maininfo{
+    width: 100vw;
+    height: 56.25vw;
+    text-align: center;
+    color: rgb(233, 233, 233);
+}
+.maininfo h2{
+    font-size: 1em;
+    margin-top: calc((56.25vw/4) - 2em - 42px - 1em);
+    color: #111111;
+}
+.mainframestreamwrapper{
+    height: 100%; 
+    width: 100%;
+    margin-top: 0px; 
+    margin-left: 0px;
+}
+.bordervid{
+    display: none;
+}
+@media (min-aspect-ratio: 23/20) {
+    .mainframestream{
+        height: calc(100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em);
+        width: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 - 30px);
+        min-width: 35vw;
+        min-height: calc(35vw/1.7777);
+        background-image: url(CrshEmbedPlayerBackground.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: #f5d81b;
+    }
+    .maininfo{
+        width: calc(100vw - (100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)*1.7777 + 30px);
+        height: calc(100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em);
+    }
+    .maininfo h2{
+        font-size: 1em;
+        margin-top: calc((100vh - 0.8cm - max(min(3.0cm, 12vh), 2cm) - 38px - 3em)/2 - 2em - 42px - 1em);
+    }
+    .mainContent{
+        display: flex;
+        flex-direction: row;
+    }
+    .mainframestreamwrapper{
+        height: calc(100% - 40px); 
+        width: calc(100% - 41.11px); 
+        margin-top: 20px; 
+        margin-left: 20px;
+    }
+}
+@media (min-aspect-ratio: 24.5/20) {
+    .bordervid{
+        display: block;
+    }
+}
+@media (min-aspect-ratio: 60.5/20) {
+    .bordervid{
+        display: none;
+    }
+}

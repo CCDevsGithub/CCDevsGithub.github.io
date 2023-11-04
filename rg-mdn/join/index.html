@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q42S3H2VKD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config','G-Q42S3H2VKD');
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="joinstyle.css">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
+        <script>
+            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN'];
+            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
+            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Singapore','Thailand','Vietnam']
+            let region_code = '';
+            let code_index = -1;
+            setTimeout(() => {
+                fetch('http://ip-api.com/json/?fields=61439')
+                    .then(res => res.json())
+                    .then(res => {
+                        region_code = res.countryCode;
+                        let len_ = regions_def.length;
+                        for (let y=0; y<len_;y++){
+                            if (regions_def[y] == region_code){
+                                code_index = y;
+                            }
+                        }
+                        if(code_index != -1){
+                            let rt = document.getElementById("regiontext");
+                            let inrtext = ""
+                            let minvalreg = code_index-3
+                            let maxvalreg = code_index+3
+                            if (minvalreg < 0){
+                                minvalreg = minvalreg + len_
+                                for (let z=minvalreg;z<len_;z++){
+                                    if (z==minvalreg){
+                                        inrtext = region_text[z];
+                                    } else {
+                                        inrtext = inrtext + "<br />" + region_text[z];
+                                    }
+                                }
+                                for (let k=0;k<code_index+4;k++){
+                                    if(k==code_index){
+                                        if(diff_lang[k] == 0){
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + "</span>";
+                                        } else {
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
+                                        }
+                                    } else {
+                                        inrtext = inrtext + "<br />" + region_text[k];
+                                    }
+                                }
+                            } else if (maxvalreg > len_){
+                                maxvalreg = maxvalreg - len_
+                                for (let z=code_index-3;z<len_;z++){
+                                    if (z==minvalreg){
+                                        inrtext = region_text[z];
+                                    } else {
+                                        if(z==code_index){
+                                            if(diff_lang[z] == 0){
+                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
+                                            } else {
+                                                inrtext = inrtext +"<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                            }
+                                        } else {
+                                            inrtext = inrtext + "<br />" + region_text[z];
+                                        }
+                                    }
+                                }
+                                for (let k=0;k<maxvalreg+1;k++){
+                                    inrtext = inrtext + "<br />" + region_text[k];
+                                }
+                            } else {
+                                for (let z=code_index-3;z<code_index+4;z++){
+                                    if (z==minvalreg){
+                                        inrtext = region_text[z];
+                                    } else {
+                                        if(z==code_index){
+                                            if(diff_lang[z] == 0){
+                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
+                                            } else {
+                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                            }
+                                        } else {
+                                            inrtext = inrtext + "<br />" + region_text[z];
+                                        }
+                                    }
+                                }
+                            }
+                            rt.style.opacity = "0";
+                            rt.style.transition = null;
+                            setTimeout(() => {
+                                rt.style.transition = "ease 0.8s";
+                                rt.style.opacity = "1";
+                                rt.innerHTML = "<h1>" + inrtext + "</h1>";
+                            }, "10");
+                        }
+                        if (code_index != -1){
+                            Callfunc();
+                        }
+                    })
+            }, "1200");
+        </script>
+    </head>
+    <title>Join Our Discord and Play Now!!!</title>
+    <body>
+        <div id="preloadpg">
+            <div class="preloadcnt">
+                <embed src ="https://www.collegiatecrash.com/Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+                <p><mark>我们正在寻找志愿者加入 Collegiate Crash 团队！ 如有疑问和申请，请通过 apply@collegiatecrash.com 联系我们。</p>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menulogo">
+                <a href="https://www.collegiatecrash.com/rg-mdn/" class="menuimglink"><embed src ="https://www.collegiatecrash.com/Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
+            </div>
+        </div>
+        <div class="selectjoinregion" style="margin-top: 1vh;">
+            <h1 id="regiontext">日本<br>한국<br>pilipinas<br><span id="rgndisplaytextspn">区域选择</span><br>ประเทศไทย<br>Việt Nam<br>Indonesia</h1>
+            <div class="buttom">
+                <select id="selectRegionDropDown" onchange="TextDisplayRegionChange()">
+                    <optgroup label="------------------------------------" id="topchoiceregiondisplay">
+                        <option value="DEF" selected disabled id="defselectdisplayregion">区域选择 / Region Select</option>
+                    </optgroup>
+                    <optgroup label="------------------------------------">
+                        <option value="Brunei">文莱 (Brunei)</option>
+                        <option value="Cambodia">柬埔寨 (Cambodia / កម្ពុជា។)</option>
+                        <option value="Indonesia">印度尼西亚 (Indonesia)</option>
+                        <option value="Japan">日本 (Japan / 日本)</option>
+                        <option value="Laos">老挝 (Laos / ປະເທດລາວ)</option>
+                        <option value="Malaysia">马来西亚 (Malaysia)</option>
+                        <option value="Mongolia">蒙古 (Mongolia / Монгол)</option>
+                        <option value="Myanmar">缅甸 (Myanmar / မြန်မာပြည်)</option>
+                        <option value="Philippines">菲律宾 (Philippines / pilipinas)</option>
+                        <option value="Singapore">新加坡 (Singapore)</option>
+                        <option value="South Korea">韩国 (South Korea / 한국)</option>
+                        <option value="Thailand">泰国 (Thailand / ประเทศไทย)</option>
+                        <option value="Vietnam">越南 (Vietnam / Việt Nam)</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="notice">
+            <div class="continuebutton">
+                <button class="btndiscord" id="joinButtondis" onclick="window.location.href='https://discord.gg/reZbFmsZ';"></button>
+                <span><h1>继续 ------------ >></h1></span>
+            </div>
+            <script>
+                var onload_ = document.getElementById("preloadpg");
+                window.addEventListener("load", function(){
+                    onload_.style.display="none";
+                })
+                function TextDisplayRegionChange(){
+                    var regionspan = document.getElementById('rgndisplaytextspn');
+                    var regionselectdrop = document.getElementById('selectRegionDropDown').value;
+                    if (regionselectdrop == "Japan" || regionselectdrop == "日本"){
+                        document.getElementById('joinButtondis').onclick = function discordJP(){
+                            window.location.href='https://google.com';
+                        };
+                    } else if (regionselectdrop == "South Korea" || regionselectdrop == "한국"){
+                        document.getElementById('joinButtondis').onclick = function discordKR(){
+                            window.location.href='https://google.com';
+                        };
+                    } else {
+                        document.getElementById('joinButtondis').onclick = function discordSEA(){
+                            window.location.href='https://discord.gg/9ASGD4dEpu';
+                        };
+                    }
+                    regionspan.innerText = regionselectdrop;
+                }
+                function Callfunc(){
+                    var topchoiceregdis = document.getElementById('topchoiceregiondisplay');
+                    var topchoiceadd = document.createElement('option');
+                    topchoiceadd.value = region_text[code_index];
+                    topchoiceadd.text = region_text[code_index] + " (" + region_text_eng[code_index] + ")";
+                    topchoiceadd.selected = true;
+                    topchoiceregdis.append(topchoiceadd);
+                    if (code_index == 8){
+                        document.getElementById('joinButtondis').onclick = function discordJP(){
+                            window.location.href='https://google.com';
+                        };
+                    } else if (code_index == 1){
+                        document.getElementById('joinButtondis').onclick = function discordKR(){
+                            window.location.href='https://google.com';
+                        };
+                    }
+                }
+            </script>
+            <h1 id="n1">通知：本站目前正在维护中</h1>
+            <p id="n2">该网站目前可能无法按预期运行，现在请随意探索我们的<a href="https://www.collegiatecrash.com/rg-mdn/socials/" style="text-decoration: none; color: #2e2e2e;">社交媒体</a>。感谢您的耐心等待。</p>
+        </div>
+        <script>
+            var hone = document.getElementById('n1');
+            var htwo = document.getElementById('n2');
+            hone.style.transition = 'all 700ms, opacity 500ms';
+            setTimeout(function(){
+                var honeHeight = hone.offsetHeight;
+                var honeHeightFinal = (honeHeight-15) * -1;
+                hone.style.marginBottom = honeHeightFinal;
+                hone.style.opacity = '0';
+            }, 4000)
+            setTimeout(function(){
+                hone.remove();
+                htwo.style.paddingTop = '15px';
+            }, 4700)
+        </script>
+    </body>
+</html>
