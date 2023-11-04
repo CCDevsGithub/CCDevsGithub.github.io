@@ -1,9 +1,18 @@
 <html>
     <head>
+        <!--Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q42S3H2VKD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config','G-Q42S3H2VKD')
+        </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="home.css">
-        <link rel="icon" href="Crsh_Icon_Inv.png" type="x-icon">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
     </head>
     <title>Collegiate Crash: Your home for the collegiate competitive experience</title>
     <body onscroll="TriggerMenuTopAnimation()" onresize="ChangeViewport()" style="width: 100vw; overflow-x: hidden;">
@@ -232,7 +241,7 @@
                 </div>
                 <div style="text-align: left; margin-left: 3vw;">
                     <h1 style="margin-left: 0.3em; font-size: 4em; margin-top: 10vh;">Who are we?</h1>
-                    <h2 style="color: lightgrey; line-height: 1.5em; margin-right: 50vw;">We at Collegiate Crash are trying to provide a platform to elavate collegiate athletics on a global scale in a step by step manner. With our premiere selection of sports and e-sports given current relevance, popularity and a host of other variables is where we primarily intend to focus our resources to create competitive infrastructures. As methods to develop these infrastructures of our respective selection of sports and e-sports, a few ways we do so is through hosting events such as but not limited to tournaments, scrims, leagues etc. We do have plans to introduce additional sports and e-sports as we progress.</h2>
+                    <h2 style="color: lightgrey; line-height: 1.5em; margin-right: 50vw;">We at Collegiate Crash are trying to provide a platform to elevate collegiate athletics on a global scale in a step by step manner. With our premiere selection of sports and e-sports given current relevance, popularity and a host of other variables is where we primarily intend to focus our resources to create competitive infrastructures. As methods to develop these infrastructures of our respective selection of sports and e-sports, a few ways we do so is through hosting events such as but not limited to tournaments, scrims, leagues etc. We do have plans to introduce additional sports and e-sports as we progress.</h2>
                 </div>
             </div>
             <div style="width: 100vw; overflow: hidden;">
@@ -261,35 +270,6 @@
                             onload_.style.display="none";
                         }, 1100)
                     })
-                    const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
-                    const region_header = ['注意:このサイトは現在メンテナンス中です',
-                    '알림: 이 사이트는 현재 유지 관리 중입니다',
-                    'Perhatikan: Situs ini sedang dalam pemeliharaan']
-                    const region_footer = ['サイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、ソーシャルメディアプラットフォームを自由に探索してください. あなたの忍耐は高く評価されます。',
-                    '이 사이트는 당분간 의도한 대로 작동하지 않을 수 있습니다. 당분간은 소셜 미디어 플랫폼을 자유롭게 탐색하십시오.양해해 주셔서 감사해요.',
-                    'Situs ini mungkin tidak berfungsi sebagaimana dimaksud untuk saat ini, jangan ragu untuk menjelajahi sosial kami untuk saat ini. Kesabaran Anda dihargai.']
-                    let user_region = '';
-                    let region_index = -1;
-                    fetch('http://ip-api.com/json/?fields=61439')
-                        .then(res => res.json())
-                        .then(res => {
-                            user_region = res.countryCode;
-                            let len = region_codes.length;
-                            for (let x=0; x<len;x++){
-                                if (region_codes[x] == user_region){
-                                    region_index = x;
-                                }
-                            }
-                            if(region_index != -1){
-                                let ht = document.getElementById("n1");
-                                let ft = document.getElementById("n2");
-                                if (region_index < 3){
-                                    ht.textContent = region_header[region_index]
-                                    ft.textContent = region_footer[region_index]
-                                }
-                            }
-                        })
-                    
                 </script>
             </div>
             <div class="notice">
