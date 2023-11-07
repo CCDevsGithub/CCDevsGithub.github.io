@@ -15,7 +15,7 @@
         <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
     </head>
     <title>新闻 | Collegiate Crash</title>
-    <body>
+    <body style="overflow-x: hidden;">
         <div id="preloadpg">
             <div class="preloadcnt">
                 <embed src ="https://www.collegiatecrash.com/Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
@@ -28,9 +28,47 @@
                     <a href="https://www.collegiatecrash.com/rg-mdn/" class="menuimglink"><embed src ="https://www.collegiatecrash.com/Crsh.svg" class="menuimg" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%); pointer-events: none;"></a>
                 </div>
             </div>
+            <div class="newsContent">
+                <h1>最新消息：</h1>
+                <div class="twothreeWBRKickoff" onclick="location.href='https://www.collegiatecrash.com/rg-mdn/news/Announcing_Collegiate_Crash_2023_Winter_BR_Kickoff/';" style="cursor:pointer;" onmouseenter="hoverNews()" onmouseleave="hoverNewsoff()">
+                    <div class="insideNewsDiv">
+                        <div class="insideNewsDiv-background" id="insideNewsDiv-background_">
+                        </div>
+                        <div class="insideNewsDiv-content" id="insideNewsDiv-content_">
+                            <h2 id="htwoonee">Announcing our 2023 冬天 大逃杀 Kickoff</h2>
+                            <p id="pone">2023 年 11 月 6 日</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function hoverNews(){
+                    document.getElementById("pone").style.transition = "ease 0.5s";
+                    document.getElementById("htwoonee").style.transition = "ease 0.5s";
+                    document.getElementById("insideNewsDiv-background_").style.transition = "ease 0.5s";
+                    document.getElementById("insideNewsDiv-content_").style.transition = "ease 0.5s";
+                    document.getElementById("insideNewsDiv-background_").style.filter = "blur(10px)";
+                    document.getElementById("insideNewsDiv-content_").style.backgroundColor = "rgba(36, 36, 36, 0.9)";
+                    document.getElementById("pone").style.paddingBottom = "4vh";
+                    document.getElementById("htwoonee").style.fontSize = "3vh";
+                }
+                function hoverNewsoff(){
+                    document.getElementById("pone").style.transition = "ease 0.5s";
+                    document.getElementById("htwoonee").style.transition = "ease 0.5s";
+                    document.getElementById("insideNewsDiv-background_").style.transition = "ease 0.8s";
+                    document.getElementById("insideNewsDiv-content_").style.transition = "ease 0.5s";
+                    document.getElementById("insideNewsDiv-background_").style.filter = "blur(0px)";
+                    document.getElementById("insideNewsDiv-content_").style.backgroundColor = "rgba(36, 36, 36, 0.8)";
+                    document.getElementById("pone").style.paddingBottom = "1.4vh";
+                    document.getElementById("htwoonee").style.fontSize = "2.4vh";
+                }
+            </script>
             <div class="mainContent">
+                <div style="position: relative;">
+                    <h1 style="position: absolute; top: 0px; margin: 0px; margin-top: calc(-1*(max(calc(50vh - 24.2vw), 3.2cm)) + 2vh); margin-left: 1.5vw; font-size: 2.4vh; color: #969696;">存档的帖子：</h1>
+                </div>
                 <img src="NoNewsIcon.svg" style="width: 20vw; filter: invert(0.2); margin-left: 40vw;">
-                <h2>好像没有新消息了。</br>返回我们的<a href="https://www.collegiatecrash.com/rg-mdn/" style="text-decoration: none; color: #969696;">主页？</a></h2>
+                <h2>看来没有什么旧消息了。</br>返回我们的<a href="https://www.collegiatecrash.com/rg-mdn/" style="text-decoration: none; color: #969696;">主页？</a></h2>
             </div>
             <div class="notice" id="notice_">
                 <h1 id="n1">通知：本站目前正在维护中</h1>

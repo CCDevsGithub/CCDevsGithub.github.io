@@ -1,22 +1,3 @@
-<script>
-    const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
-    fetch('http://ip-api.com/json/?fields=61439')
-        .then(res => res.json())
-        .then(res => {
-            user_region = res.countryCode;
-            let len = region_codes.length;
-            for (let x=0; x<len;x++){
-                if (region_codes[x] == user_region){
-                    region_index = x;
-                }
-            }
-            if(region_index != -1){
-                if (region_index < 3){
-                    window.location = "./" + region_codes[region_index].toLowerCase() + "/404/index.html";
-                }
-            }
-        })
-</script>
 <html>
     <head>
         <meta charset="utf-8">

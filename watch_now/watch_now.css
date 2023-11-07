@@ -115,7 +115,10 @@ mark {
 .mainframestream{
     width: 100vw;
     height: 56.25vw;
-    background-color: #6441a5;
+    background-color: #f5d81b;
+    background-image: url(CrshEmbedPlayerBackground.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .maininfo{
     width: 100vw;

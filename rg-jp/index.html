@@ -58,6 +58,9 @@
                         if (regionselectdrop == "English"){
                             window.location.replace("https://www.collegiatecrash.com");
                         }
+                        if (regionselectdrop == "Chinese"){
+                            window.location.replace("https://www.collegiatecrash.com/rg-mdn/");
+                        }
                     }
                     function onMobileView(){
                         if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
@@ -115,6 +118,7 @@
                     var menuelementsid = document.getElementById("menuelements_")
                     function TriggerMenuTopAnimation(){
                         runTrigger = true;
+                        TriggerNoticetwo();
                         if(preAnimationtop == true){
                             setTimeout(() => {
                                 menuimglinkid.style.left = "0px";
@@ -319,16 +323,56 @@
                     })
                 </script>
             </div>
-            <div class="LangNotice">
-            </div>
-            <div class="notice">
-                <h1 id="n1">注意:このサイトは現在メンテナンス中です</h1>
-                <p id="n2">Tサイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、<a href="https://www.collegiatecrash.com/rg-jp/socials/" style="text-decoration: none; color: #2e2e2e;">ソーシャルメディアプラットフォーム</a>を自由に探索してください. あなたの忍耐は高く評価されます。</p>
+            <div class="notice" id="notice_">
+                <div class="LangNotice" id="LangNotice_">
+                    <p id="ptxt1">あなたは現在、私たちのホームページの翻訳版をご覧になっていますが、このホームページはあなたの便宜のために作成されており、私たちはオリジナルのメッセージを伝えるために最善を尽くしています。 ただし、この翻訳に誤りがあると思われる場合は、皆様により良いエクスペリエンスを提供するために、<a href="mailto:support@collegiatecrash.com" style="text-decoration: underline; color: #2e2e2e;">support@collegiatecrash.com</a> までお知らせください。</p>
+                </div>
+                <div class="placeholderanidiv" id="placeholderanidiv_">
+                </div>
+                <div class="mainNotice">
+                    <h1 id="n1">注意:このサイトは現在メンテナンス中です</h1>
+                    <p id="n2">Tサイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、<a href="https://www.collegiatecrash.com/rg-jp/socials/" style="text-decoration: none; color: #2e2e2e;">ソーシャルメディアプラットフォーム</a>を自由に探索してください. あなたの忍耐は高く評価されます。</p>
+                </div>
             </div>
             <script>
                 var hone = document.getElementById('n1');
                 var htwo = document.getElementById('n2');
                 hone.style.transition = 'all 700ms';
+                var ranAni = false;
+                function TriggerNoticetwo(){
+                    if(ranAni == false){
+                        ranAni = true;
+                        setTimeout(() => {
+                            var bottomcalc1 = document.getElementById("notice_").clientHeight - document.getElementById("LangNotice_").clientHeight;
+                            console.log(typeof bottomcalc1);
+                            console.log(bottomcalc1);
+                            document.getElementById("placeholderanidiv_").style.bottom =  bottomcalc1;
+                            document.getElementById("placeholderanidiv_").style.transition = "ease 0.6s";
+                            document.getElementById("placeholderanidiv_").style.height = document.getElementById('LangNotice_').clientHeight;
+                            setTimeout(() => {
+                                document.getElementById("LangNotice_").style.opacity = "1";
+                                document.getElementById("placeholderanidiv_").style.opacity = "0";
+                            }, "600");
+                            setTimeout(() => {
+                                document.getElementById("placeholderanidiv_").style.display = "none";
+                            }, "601");
+                            setTimeout(() => {
+                                document.getElementById("placeholderanidiv_").style.display = "block";
+                            }, "14999");
+                            setTimeout(() => {
+                                document.getElementById("placeholderanidiv_").style.opacity = "1";
+                            }, "15000");
+                            setTimeout(() => {
+                                document.getElementById("LangNotice_").style.opacity = "0";
+                                document.getElementById("placeholderanidiv_").style.height = "0px";
+                            }, "15600");
+                            setTimeout(() => {  
+                                document.getElementById("LangNotice_").style.display = "none";
+                                document.getElementById("placeholderanidiv_").style.display = "none";
+                            }, "16400");
+                        }, "5000");
+                    }
+                }
             </script>
         </div>
     </body>

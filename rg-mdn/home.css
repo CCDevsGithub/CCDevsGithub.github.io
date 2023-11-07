@@ -39,7 +39,6 @@ body{
 .notice{
     position: fixed;
     width: 100vw;
-    background-color: #edaa00;
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: smaller;
@@ -174,4 +173,25 @@ mark {
     text-align: center;
     overflow: hidden;
     transition: ease 0.4s;
+}
+.LangNotice{
+    background-color: #fac400;
+    text-align: center;
+    opacity: 0;
+}
+.LangNotice p{
+    color:#2e2e2e;
+    margin: 0px;
+    padding-left: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.mainNotice{
+    background-color: #edaa00;
+}
+.placeholderanidiv{
+    background-color: #fac400;
+    position: absolute;
+    width: 100vw;
+    height: 0px;
 }

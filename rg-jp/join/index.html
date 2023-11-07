@@ -1,111 +1,103 @@
 <html>
     <head>
-        <!--Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q42S3H2VKD"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config','G-Q42S3H2VKD')
+            gtag('config','G-Q42S3H2VKD');
         </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="joinstyle.css">
         <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
         <script>
-            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN'];
-            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
-            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0]
-            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Singapore','Thailand','Vietnam']
+            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN','CN','HK','TW'];
+            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam', '中国', 'Hong Kong','台湾']
+            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Thailand','Singapore','Vietnam', 'China', 'Hong Kong','Taiwan']
             let region_code = '';
             let code_index = -1;
-            setTimeout(() => {
-                fetch('http://ip-api.com/json/?fields=61439')
-                    .then(res => res.json())
-                    .then(res => {
-                        region_code = res.countryCode;
-                        let len_ = regions_def.length;
-                        for (let y=0; y<len_;y++){
-                            if (regions_def[y] == region_code){
-                                code_index = y;
-                            }
+            fetch('http://ip-api.com/json/?fields=61439')
+                .then(res => res.json())
+                .then(res => {
+                    region_code = res.countryCode;
+                    let len_ = regions_def.length;
+                    for (let y=0; y<len_;y++){
+                        if (regions_def[y] == region_code){
+                            code_index = y;
                         }
-                        if(code_index != -1){
-                            let rt = document.getElementById("regiontext");
-                            let inrtext = ""
-                            let minvalreg = code_index-3
-                            let maxvalreg = code_index+3
-                            if (minvalreg < 0){
-                                minvalreg = minvalreg + len_
-                                for (let z=minvalreg;z<len_;z++){
-                                    if (z==minvalreg){
-                                        inrtext = region_text[z];
+                    }
+                    if(code_index != -1){
+                        let rt = document.getElementById("regiontext");
+                        let inrtext = "";
+                        let minvalreg = code_index-3;
+                        let maxvalreg = code_index+3;
+                        if (minvalreg < 0){
+                            minvalreg = minvalreg + len_
+                            for (let z=minvalreg;z<len_;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    inrtext = inrtext + "<br />" + region_text[z];
+                                }
+                            }
+                            for (let k=0;k<code_index+4;k++){
+                                if(k==code_index){
+                                    if(diff_lang[k] == 0){
+                                        inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + "</span>";
+                                    } else {
+                                        inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
+                                    }
+                                } else {
+                                    inrtext = inrtext + "<br />" + region_text[k];
+                                }
+                            }
+                        } else if (maxvalreg >= len_){
+                            maxvalreg = maxvalreg - len_
+                            for (let z=code_index-3;z<len_;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    if(z==code_index){
+                                        if(diff_lang[z] == 0){
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
+                                        } else {
+                                            inrtext = inrtext +"<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
+                                        }
                                     } else {
                                         inrtext = inrtext + "<br />" + region_text[z];
                                     }
                                 }
-                                for (let k=0;k<code_index+4;k++){
-                                    if(k==code_index){
-                                        if(diff_lang[k] == 0){
-                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + "</span>";
+                            }
+                            for (let k=0;k<maxvalreg+1;k++){
+                                inrtext = inrtext + "<br />" + region_text[k];
+                            }
+                        } else {
+                            for (let z=code_index-3;z<code_index+4;z++){
+                                if (z==minvalreg){
+                                    inrtext = region_text[z];
+                                } else {
+                                    if(z==code_index){
+                                        if(diff_lang[z] == 0){
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
                                         } else {
-                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[k] + " / " + region_text_eng[k]  +"</span>";
+                                            inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
                                         }
                                     } else {
-                                        inrtext = inrtext + "<br />" + region_text[k];
-                                    }
-                                }
-                            } else if (maxvalreg > len_){
-                                maxvalreg = maxvalreg - len_
-                                for (let z=code_index-3;z<len_;z++){
-                                    if (z==minvalreg){
-                                        inrtext = region_text[z];
-                                    } else {
-                                        if(z==code_index){
-                                            if(diff_lang[z] == 0){
-                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
-                                            } else {
-                                                inrtext = inrtext +"<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
-                                            }
-                                        } else {
-                                            inrtext = inrtext + "<br />" + region_text[z];
-                                        }
-                                    }
-                                }
-                                for (let k=0;k<maxvalreg+1;k++){
-                                    inrtext = inrtext + "<br />" + region_text[k];
-                                }
-                            } else {
-                                for (let z=code_index-3;z<code_index+4;z++){
-                                    if (z==minvalreg){
-                                        inrtext = region_text[z];
-                                    } else {
-                                        if(z==code_index){
-                                            if(diff_lang[z] == 0){
-                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + "</span>";
-                                            } else {
-                                                inrtext = inrtext + "<br /><span id=\"rgndisplaytextspn\">" + region_text[z] + " / " + region_text_eng[z]  +"</span>";
-                                            }
-                                        } else {
-                                            inrtext = inrtext + "<br />" + region_text[z];
-                                        }
+                                        inrtext = inrtext + "<br />" + region_text[z];
                                     }
                                 }
                             }
-                            rt.style.opacity = "0";
-                            rt.style.transition = null;
-                            setTimeout(() => {
-                                rt.style.transition = "ease 0.8s";
-                                rt.style.opacity = "1";
-                                rt.innerHTML = "<h1>" + inrtext + "</h1>";
-                            }, "10");
                         }
-                        if (code_index != -1){
-                            Callfunc();
-                        }
-                    })
-            }, "1200");
+                        rt.innerHTML = "<h1>" + inrtext + "</h1>"
+                    }
+                    if (code_index != -1){
+                        Callfunc();
+                    }
+                })
         </script>
     </head>
     <title>Join Our Discord and Play Now!!!</title>
@@ -131,6 +123,8 @@
                     <optgroup label="------------------------------------">
                         <option value="Brunei">ブルネイ (Brunei)</option>
                         <option value="Cambodia">カンボジア (Cambodia / កម្ពុជា។)</option>
+                        <option value="China">中国 (China / 中国)</option>
+                        <option value="Hong Kong">香港 (Hong Kong / 香港)</option>
                         <option value="Indonesia">インドネシア (Indonesia)</option>
                         <option value="Japan">日本 (Japan)</option>
                         <option value="Laos">ラオス (Laos / ປະເທດລາວ)</option>
@@ -141,6 +135,7 @@
                         <option value="Singapore">シンガポール (Singapore)</option>
                         <option value="South Korea">韓国 (South Korea / 한국)</option>
                         <option value="Thailand">タイ (Thailand / ประเทศไทย)</option>
+                        <option value="Taiwan">台湾 (Taiwan / 台湾)</option>
                         <option value="Vietnam">ベトナム (Vietnam / Việt Nam)</option>
                     </optgroup>
                 </select>

@@ -58,7 +58,9 @@ mark {
     font-family: Arial, sans-serif;
     font-weight: bold;
     padding-top: max(calc(50vh - 24.2vw), 3.2cm);
+    padding-bottom: max(calc(50vh - 24.2vw), 3.2cm);
     align-items: center;
+    background-color: #1a1a1a
 }
 .mainContent h1{
     font-size: 4em;
@@ -73,7 +75,6 @@ mark {
     line-height: 2.1vw;
     text-align: center;
 }
-
 #preloadpg{
     width: 100vw;
     height: 100vh;
@@ -98,4 +99,60 @@ mark {
     transform: translate(-50%, 0%);
     margin-left: 50%;
     padding-bottom: 10px;
+}
+.twothreeWBRKickoff{
+    background-color: #2e2e2e;
+    width: 20vw;
+    min-width: 23vh;
+    height: 23vh;
+    margin-left: -0.5vw;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.insideNewsDiv-background{
+    width: 100%;
+    height: 100%;
+    background-image: url(img1disstart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.newsContent{
+    width: 100vw;
+    height: 31vh;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: whitesmoke;
+    padding-left: 1.5vw;
+}
+.insideNewsDiv{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.insideNewsDiv-content{
+    background-color: rgba(36, 36, 36, 0.6);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.newsContent h1{
+    margin-bottom: 0.4em;
+    font-size: 3.4vh;
+}
+.newsContent h2{
+    margin-left: 1vw;
+    margin-right: 0.5vw;
+    font-size: 2.4vh;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0.5vh;
+}
+.newsContent p{
+    margin-left: 1vw;
+    margin-right: 0.5vw;
+    font-size: 1.4vh;
+    padding-bottom: 1.4vh;
+    margin-top: 0.7vh;
+    margin-bottom: 0px;
 }

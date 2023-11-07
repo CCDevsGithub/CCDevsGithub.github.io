@@ -3,12 +3,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="joinstyle.css">
-        <link rel="icon" href="Crsh_Icon_Inv.png" type="x-icon">
+        <link rel="icon" href="https://www.collegiatecrash.com/Crsh_Icon_Inv.png" type="x-icon">
         <script>
-            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN'];
-            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam']
-            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0]
-            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Singapore','Thailand','Vietnam']
+            const regions_def = ['BN','KR','ID','KH','LA','MY','MM','MN','JP','PH','TH','SG','VN','CN','HK','TW'];
+            const region_text = ['Brunei','한국','Indonesia','កម្ពុជា។','ປະເທດລາວ','Malaysia','Монгол','မြန်မာပြည်','日本','pilipinas','ประเทศไทย','Singapore','Việt Nam', '中国', 'Hong Kong','台湾']
+            const diff_lang = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            const region_text_eng = ['Brunei','South Korea','Indonesia','Cambodia','Laos','Malaysia','Myanmar','Mongolia','Japan','Philippines','Thailand','Singapore','Vietnam', 'China', 'Hong Kong','Taiwan']
             let region_code = '';
             let code_index = -1;
             fetch('http://ip-api.com/json/?fields=61439')
@@ -23,9 +23,9 @@
                     }
                     if(code_index != -1){
                         let rt = document.getElementById("regiontext");
-                        let inrtext = ""
-                        let minvalreg = code_index-3
-                        let maxvalreg = code_index+3
+                        let inrtext = "";
+                        let minvalreg = code_index-3;
+                        let maxvalreg = code_index+3;
                         if (minvalreg < 0){
                             minvalreg = minvalreg + len_
                             for (let z=minvalreg;z<len_;z++){
@@ -46,7 +46,7 @@
                                     inrtext = inrtext + "<br />" + region_text[k];
                                 }
                             }
-                        } else if (maxvalreg > len_){
+                        } else if (maxvalreg >= len_){
                             maxvalreg = maxvalreg - len_
                             for (let z=code_index-3;z<len_;z++){
                                 if (z==minvalreg){
@@ -90,42 +90,12 @@
                     }
                 })
         </script>
-        <script>
-            const region_codes = ['JP','KR','ID','SG','MY','VN','TH'];
-            const region_header = ['注意:このサイトは現在メンテナンス中です',
-            '알림: 이 사이트는 현재 유지 관리 중입니다',
-            'Perhatikan: Situs ini sedang dalam pemeliharaan']
-            const region_footer = ['サイトは、この間、意図したとおりに機能しない可能性があります, 当面の間、ソーシャルメディアプラットフォームを自由に探索してください. あなたの忍耐は高く評価されます。',
-            '이 사이트는 당분간 의도한 대로 작동하지 않을 수 있습니다. 당분간은 소셜 미디어 플랫폼을 자유롭게 탐색하십시오.양해해 주셔서 감사해요.',
-            'Situs ini mungkin tidak berfungsi sebagaimana dimaksud untuk saat ini, jangan ragu untuk menjelajahi sosial kami untuk saat ini. Kesabaran Anda dihargai.']
-            let user_region = '';
-            let region_index = -1;
-            fetch('http://ip-api.com/json/?fields=61439')
-                .then(res => res.json())
-                .then(res => {
-                    user_region = res.countryCode;
-                    let len = region_codes.length;
-                    for (let x=0; x<len;x++){
-                        if (region_codes[x] == user_region){
-                            region_index = x;
-                        }
-                    }
-                    if(region_index != -1){
-                        let ht = document.getElementById("n1");
-                        let ft = document.getElementById("n2");
-                        if (region_index < 3){
-                            ht.textContent = region_header[region_index]
-                            ft.textContent = region_footer[region_index]
-                        }
-                    }
-                })
-        </script>
     </head>
     <title>Join Our Discord and Play Now!!!</title>
     <body>
         <div id="preloadpg">
             <div class="preloadcnt">
-                <embed src ="Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
+                <embed src ="https://www.collegiatecrash.com/Crsh.svg" class="preloadlgo" style="filter: invert(100%) sepia(0%) saturate(7%) hue-rotate(132deg) brightness(103%) contrast(103%) ">
                 <p><mark>We are looking for volunteers to join the Collegiate Crash team!!. For queries and applications, kindly contact us at apply@collegiatecrash.com</p>
             </div>
         </div>
@@ -144,6 +114,8 @@
                     <optgroup label="------------------------------------">
                         <option value="Brunei">Brunei</option>
                         <option value="Cambodia">Cambodia / កម្ពុជា។</option>
+                        <option value="China">China / 中国</option>
+                        <option value="Hong Kong">Hong Kong / 香港</option>
                         <option value="Indonesia">Indonesia</option>
                         <option value="Japan">Japan / 日本</option>
                         <option value="Laos">Laos / ປະເທດລາວ</option>
@@ -153,6 +125,7 @@
                         <option value="Philippines">Philippines / pilipinas</option>
                         <option value="Singapore">Singapore</option>
                         <option value="South Korea">South Korea / 한국</option>
+                        <option value="Taiwan">Taiwan / 台湾</option>
                         <option value="Thailand">Thailand / ประเทศไทย</option>
                         <option value="Vietnam">Vietnam / Việt Nam</option>
                     </optgroup>
@@ -206,7 +179,7 @@
                 }
             </script>
             <h1 id="n1">Notice: This site is currently under maintenance</h1>
-            <p id="n2">The site may not work as intended for this while, feel free to explore our socials for the time being. Your patience is appreciated.</p>
+            <p id="n2">The site may not work as intended for this while, feel free to explore <a href="https://www.collegiatecrash.com/socials/" style="text-decoration: none; color: #2e2e2e;">our socials</a> for the time being. Your patience is appreciated.</p>
         </div>
         <script>
             var hone = document.getElementById('n1');
