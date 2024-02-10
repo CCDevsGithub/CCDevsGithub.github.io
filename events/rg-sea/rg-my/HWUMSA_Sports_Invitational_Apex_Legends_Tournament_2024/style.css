@@ -12,17 +12,31 @@ body{
     transition: ease-in 0.3s; 
     opacity: 0.7;
     text-decoration: none;
+    z-index: -1;
 }
 .EvntDetailsText:hover{
     opacity: 1;
     text-decoration: underline;
+    z-index: -1;
 }
 .EvntDetailsText2{
     opacity: 0.7; 
     transition: ease-in 0.3s;
+    z-index: -1;
 }
 .EvntDetailsText2:hover{
     opacity: 1;
+    z-index: -1;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 .menu{
     height: 8.5vw;
